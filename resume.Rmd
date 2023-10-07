@@ -1,0 +1,63 @@
+---
+title: "Resume"
+author: "Mia Murphy"
+date: "2023-10-06"
+output: rmdformats::downcute
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Mia Murphy
+
+**Location:** Quechee, Vermont  
+**Email:** [miamurphyvt@gmail.com](mailto:miamurphyvt@gmail.com)  
+
+I recently graduated from the University of Vermont as a non-traditional student. I am continuing my education, preparing for a Master’s in Data Science. My goal is to specialize in data analysis and visualization.
+
+## Work Experience
+
+### Research Analyst
+_2023-Present_
+
+- Spearheaded data analysis on sustainable fashion, driving actionable insights for industry leaders like Amazon and Nike.
+- Utilized statistical models to conduct trend analyses, identifying emerging sustainability opportunities.
+- Designed and delivered data-rich sustainability reports, setting and monitoring key performance metrics.
+- Collaborated cross-functionally, ensuring seamless data integration across marketing and product initiatives.
+
+### Amazon E-commerce Specialist (Internship)
+_2023_
+
+- Leveraged data analytics to boost online sales revenue by 100% within 2 months.
+- Employed trend analysis and market research, optimizing product positioning and predicting high-demand products.
+- Utilized AWS tools to analyze website traffic data, identifying trends and driving platform optimization.
+- Collaborated with teams to align Amazon sales data with broader business strategies and objectives.
+
+## Education
+
+- [**Google Data Analytics Certification**](https://coursera.org/share/a2f186954990e25e6aca88c97c518dde)
+- **2020-2022**: Bachelor’s in Economics, University of Vermont  
+  _Minors:_ Biology, Statistics
+
+## Skills
+
+### Data Analysis Tools
+SQL, R, Tableau, SAS, Power BI, Microsoft Excel
+
+### Programming
+Python, Java, LaTeX, HTML, CSS
+
+### Other Skills
+Data Analytics, Database Management, Research, Adobe Creative Cloud (Photoshop, InDesign, Illustrator), Google Suite, Microsoft Suite, Website Development
+
+## Relevant Courses
+
+- **Data Visualization – Economic Development and Policy**  
+  Utilized Excel and R for data cleaning, analysis, and visualization; Led technical projects.
+
+- **Programming – Python and Java**  
+  Acquired proficiency in structured and organized code development.
+
+- **Statistics and Data Analysis**  
+  Mastered statistical computing, biostatistics, and epidemiology using SAS and R.

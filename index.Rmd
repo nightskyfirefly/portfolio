@@ -1,0 +1,27 @@
+---
+title: "Portfolio"
+author: "Mia Murphy"
+date: "2023-10-06"
+output: rmdformats::downcute
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Mia Murphy
+
+Welcome to my portfolio. This is where I keep my projects and resume.
+
+
+## Certifications
+
+- [**Google Data Analytics Certification**](https://coursera.org/share/a2f186954990e25e6aca88c97c518dde)
+
+## Resume
+
+- [**Resume link**](https://nightskyfirefly.github.io/portfolio/resume.html)
+
+## Projects
+
+Coming soon!

@@ -1,0 +1,14 @@
+# site settings
+title: nightskyfirefly
+subtitle: portfolio
+email: miamurphyvt@gmail.com
+description: nightskyfirefly | website
+baseurl: "/portfolio"
+url: # the base hostname & protocol for your site
+  author: mia murphy
+street_address:
+  city:
+  state: VT
+zip_code:
+  country: 
+  phone: 
