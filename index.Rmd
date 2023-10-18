@@ -25,3 +25,4 @@ Welcome to my portfolio. This is where I keep my projects and resume.
 ## Projects
 
 - [**Real Estate data set analysis using Python**](https://nightskyfirefly.github.io/portfolio/MiaRealEstatePython.html)
+- [**Real Estate data set data visualization using bokeh in Python**](https://nightskyfirefly.github.io/portfolio/MiaPythonBokeh.html)
