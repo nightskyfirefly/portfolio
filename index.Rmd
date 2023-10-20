@@ -23,6 +23,15 @@ Welcome to my portfolio. This is where I keep my projects and resume.
 - [**Resume link**](https://nightskyfirefly.github.io/portfolio/resume.html)
 
 ## Projects
+#### Python
 
 - [**Real Estate data set analysis using Python**](https://nightskyfirefly.github.io/portfolio/MiaRealEstatePython.html)
 - [**Real Estate data set data visualization using bokeh in Python**](https://nightskyfirefly.github.io/portfolio/MiaPythonBokeh.html)
+
+#### R
+
+#### SQL
+
+- [**Creating a data set in SQL and performing a full data analysis**](https://nightskyfirefly.github.io/portfolio/MiaSQLCoffee.html)
+
+#### Tableau
