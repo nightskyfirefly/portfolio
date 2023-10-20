@@ -33,6 +33,6 @@ Welcome to my portfolio. This is where I keep my projects and resume.
 #### SQL
 
 - [**Creating a data set in SQL and performing a full data analysis**](https://nightskyfirefly.github.io/portfolio/MiaSQLCoffee.html)
-- [**Writing a summary report for the above data analysis**](https://nightskyfirefly.io/portfolio/MiaCoffeeSummary.html)
+- [**Writing a summary report for the above data analysis**](https://nightskyfirefly.github.io/portfolio/MiaCoffeeSummary.html)
 
 #### Tableau
