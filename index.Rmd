@@ -23,12 +23,19 @@ Welcome to my portfolio. This is where I keep my projects and resume.
 - [**Resume link**](https://nightskyfirefly.github.io/portfolio/resume.html)
 
 ## Projects
+
+These projects are a product of self-direction and independent exploration, showcasing my ability to identify interesting and relevant questions, gather and clean the necessary data, conduct comprehensive analyses, and communicate the findings effectively. Each project is accompanied by a full set of data analysis code as well as detailed summary reports tailored for stakeholders. The initiative taken in these projects demonstrates my proactive approach and my capability to drive investigations from start to finish, delivering actionable insights and valuable knowledge.
+
 #### Python
 
 - [**Real Estate data set analysis using Python**](https://nightskyfirefly.github.io/portfolio/MiaRealEstatePython.html)
 - [**Real Estate data set data visualization using Bokeh in Python**](https://nightskyfirefly.github.io/portfolio/MiaPythonBokeh.html)
 
 #### R
+
+- [**Real Estate data analysis using R. Pt. 1**](https://nightskyfirefly.github.io/portfolio/Mia_Real_Estate_Analysis.html)
+- [**Real Estate data analysis using R. Pt. 2**](https://nightskyfirefly.github.io/portfolio/Mia_Oldtown.html)
+- [**Real Estate data analysis using R. Pt. 3**](https://nightskyfirefly.github.io/portfolio/Mia_Oldtown_Summary.html)
 
 #### SQL
 
