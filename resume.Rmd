@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 **Location:** Quechee, Vermont  
 **Email:** [miamurphyvt@gmail.com](mailto:miamurphyvt@gmail.com)  
 
-I recently graduated from the University of Vermont as a non-traditional student. I am continuing my education, preparing for a Master’s in Data Science. My goal is to specialize in data analysis and visualization.
+I am an enthusiastic data analyst with a strong educational background in Economics and Statistics from the University of Vermont, enhanced by hands-on experience in data-driven roles. My academic journey includes advanced coursework in statistical analysis, coupled with extensive programming in Python, Java, and data analysis using tools like R, Tableau, and SAS. Currently in the pursuit of a Master’s in Data Science, I am eager to specialize in data analysis and visualization, translating complex data sets into actionable insights.
 
 ## Work Experience
 
@@ -36,9 +36,12 @@ _2023_
 
 ## Education
 
-- [**Google Data Analytics Certification**](https://coursera.org/share/a2f186954990e25e6aca88c97c518dde)
 - **2020-2022**: Bachelor’s in Economics, University of Vermont  
   _Minors:_ Biology, Statistics
+
+## Certifications
+
+- [**Google Data Analytics Certification**](https://coursera.org/share/a2f186954990e25e6aca88c97c518dde)
 
 ## Skills
 

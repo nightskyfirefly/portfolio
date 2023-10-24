@@ -8,10 +8,18 @@ output: rmdformats::downcute
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+**Location:** Quechee, Vermont  
+**Email:** [miamurphyvt@gmail.com](mailto:miamurphyvt@gmail.com)  
 
-## Mia Murphy
+## Welcome to My Data Analytics Portfolio!
 
-Welcome to my portfolio. This is where I keep my projects and resume.
+Hello, I’m Mia Murphy, a passionate data analyst with a foundation in Economics and Statistics from the University of Vermont. My journey into the world of data began in the classrooms of UVM and has since evolved through hands-on experiences in various data-driven roles. With a deep-seated passion for uncovering insights from complex datasets, I have honed my skills in statistical analysis, data visualization, and programming.
+
+This portfolio is a curated collection of my work, showcasing my ability to translate raw data into clear, actionable insights. From sustainable fashion trends to e-commerce optimization, each project represents a piece of my journey in data analytics. My proficiency in tools such as R, Python, Tableau, and SAS is demonstrated through the diverse range of projects presented here.
+
+I am currently furthering my education with the aim of earning a Master’s in Data Science, with a special focus on data analysis and visualization. My goal is to continuously expand my skill set and contribute meaningful insights to the field of data analytics.
+
+Please feel free to explore my projects, and do not hesitate to reach out if you have any questions or would like to discuss potential collaborations. Thank you for visiting, and I look forward to connecting with fellow data enthusiasts!
 
 
 ## Certifications
