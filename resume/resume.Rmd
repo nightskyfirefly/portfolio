@@ -1,0 +1,53 @@
+---
+title: "My Resume"
+author: "Mia Murphy"
+output: 
+  pdf_document:
+    latex_engine: xelatex
+mainfont: Calibri
+fontsize: 11pt
+header-includes:
+  - "\\usepackage{hyperref}"
+---
+
+\begin{center}
+\textbf{\Huge Mia Murphy} \\
+Quechee, VT 05059 \\
+\href{mailto:miamurphyvt@gmail.com}{miamurphyvt@gmail.com} \\
++1 (802) 310 7443 \\
+\href{https://github.com/nightskyfirefly}{GitHub} | \href{https://nightskyfirefly.github.io/portfolio}{Portfolio}
+\end{center}
+
+\vspace{1em}
+
+\section*{Profile}
+Meticulous and analytical Data Analyst with a robust background in Economics and Statistics, bolstered by hands-on experience in quantitative research and data-driven roles. Adept at designing and implementing comprehensive data analysis strategies using a variety of tools including Python, R, SQL, and Tableau. Currently expanding my expertise through a Master’s in Data Science, with a particular focus on machine learning, predictive modeling, and advanced data visualization.
+
+\vspace{1em}
+
+\section*{Work Experience}
+\textbf{Research Analyst}, 2023--Present \\
+Played a pivotal role in a major sustainability project, analyzing data for industry leaders like Amazon and Nike. Developed statistical models to identify trends in sustainable fashion, driving continuous improvement. Created data-rich sustainability reports, monitoring KPIs, and ensuring data consistency across departments.
+
+\textbf{E-commerce Specialist Intern}, 2022--2023 \\
+Optimized online sales strategies, doubling revenue in two months through advanced data analytics. Enhanced product positioning and forecasted demand using market research and trend analysis. Improved user experience and platform performance by analyzing website traffic and user behavior data.
+
+\vspace{1em}
+
+\section*{Education}
+\textbf{Bachelor of Economics}, University of Vermont, 2019--2022 \\
+GPA: 3.8, Minor in Statistics. Extensive coursework in data analysis, programming, and statistical computing.
+
+\vspace{1em}
+
+\section*{Skills}
+Data Analysis: SQL, R, Python, Tableau, SAS, Power BI, Excel \\
+Programming: Java, LaTeX, HTML, CSS \\
+Tools: Adobe Creative Cloud, Google Suite, Microsoft Office
+
+\vspace{1em}
+
+\section*{Certifications}
+Google Data Analytics Certification (2023) - Coursera \\
+Data Analytics for Business in Excel and Python Certification (2023)
+

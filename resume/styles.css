@@ -1,0 +1,12 @@
+#address, #right-panel {
+  margin-bottom: 20px;
+}
+
+#profile, #experience, #education, #skills, #certifications {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+#experience h3, #education h3, #skills li, #certifications li {
+  font-size: 10pt;
+}

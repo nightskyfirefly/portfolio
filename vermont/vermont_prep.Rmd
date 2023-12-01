@@ -1,0 +1,31 @@
+---
+title: "Vermont Disaster Preparation"
+author: "Mia Murphy"
+date: "2023-11-30"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+Vermont has historically been prone to a variety of natural disasters, with flooding being a particularly recurrent challenge. This report provides a data-driven analysis of past disasters, with a focus on floods, and assesses the state's preparedness for future events. By leveraging data analytics, we can identify patterns, predict future occurrences, and allocate resources more effectively.
+
+## Data Analysis
+This section will delve into the data collected from various events, including Tropical Storm Irene and the Great Vermont Flood of 2023. We will analyze the data to draw insights and prepare visualizations that inform disaster preparedness strategies.
+
+```{r funding_1}
+# Load necessary libraries
+library(readr)
+library(ggplot2)
+library(dplyr)
+
+# Read in the data from a CSV file
+funding_data <- read_csv("data_01.csv")
+
+# Summarize the data to get a sense of the amounts involved
+summary_data <- funding_data %>%
+  group_by(County) %>%
+  summarize(TotalAmount = sum(Amount))
+```
