@@ -35,7 +35,7 @@ Please feel free to explore my projects, and do not hesitate to reach out if you
 These projects are a product of self-direction and independent exploration, showcasing my ability to identify interesting and relevant questions, gather and clean the necessary data, conduct comprehensive analyses, and communicate the findings effectively. Each project is accompanied by a full set of data analysis code as well as detailed summary reports tailored for stakeholders. The initiative taken in these projects demonstrates my proactive approach and my capability to drive investigations from start to finish, delivering actionable insights and valuable knowledge.
 
 #### Python
-
+- [**Rural Business Marketing Strategy**](https://nightskyfirefly.github.io/portfolio/vermont/RuralBusiness.html)
 - [**Vermont Disaster Preparation**](https://nightskyfirefly.github.io/portfolio/vermont/Vermont_Disaster.html)
 - [**Real Estate data set analysis using Python**](https://nightskyfirefly.github.io/portfolio/MiaRealEstatePython.html)
 - [**Real Estate data set data visualization using Bokeh in Python**](https://nightskyfirefly.github.io/portfolio/MiaPythonBokeh.html)
