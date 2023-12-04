@@ -63,8 +63,8 @@ body, html {
     padding: 20px; /* Padding inside the section */
     margin: 20px auto; /* Margin for centering and spacing between sections */
     width: 80%; /* Fixed width for all sections */
-    min-height: 800px; /* Minimum height for all sections */
-    max-height: 800px; /* Adjust as needed */
+    min-height: 700px; /* Minimum height for all sections */
+    max-height: 700px; /* Adjust as needed */
     overflow-y: auto; /* Allows vertical scrolling */
     
 }
