@@ -1,0 +1,165 @@
+/* style.css */
+@import url('https://use.typekit.net/czv8dhl.css'); /* Importing Adobe font */
+
+
+h1, h2, h3 {
+  font-family: 'voluta-script-pro', sans-serif;
+  font-size: 40px;
+  /* Other styling properties */
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif; /* Default font for content */
+    background: url('bgtest3.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #ffe993;
+    overflow: auto;
+}
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.navbar img {
+    margin: 0 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    width: 50px; /* Adjust the button size */
+    height: auto;
+}
+
+.navbar img:hover {
+    transform: translateY(-5px);
+}
+
+/* Content container styling */
+.content {
+    padding-top: 100px; /* Space for navbar */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.section {
+    display: none;
+    padding: 20px;
+    margin: auto; /* Center the section */
+    max-width: 800px; /* Set a maximum width for the content */
+    width: 100%; /* Use the full width up to the max-width */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    background-color: rgba(0, 0, 0, 0.4); /* Dark background with 60% opacity */
+    border-radius: 8px; /* Optional: if you want rounded corners */
+    padding: 20px; /* Padding inside the section */
+    margin: 20px auto; /* Margin for centering and spacing between sections */
+    width: 80%; /* Fixed width for all sections */
+    min-height: 700px; /* Minimum height for all sections */
+    max-height: 700px; /* Adjust as needed */
+    overflow-y: auto; /* Allows vertical scrolling */
+    
+}
+
+.section h2.gold-fade {
+    text-align: center; /* Center-align the title */
+    margin: 0 auto; /* Center the title within the section, overriding any existing margins */
+    padding: 0; /* Remove padding that might affect centering */
+    display: block; /* Block display to fill the width of the container */
+    width: 100%; /* Ensure the title takes up the full width */
+    /* Retain other properties of .gold-fade necessary for the gradient */
+}
+
+.section p {
+    text-align: justify; /* Justified text for clean alignment */
+    padding: 0 20px; /* Same horizontal padding as the section for alignment */
+}
+
+.section.active {
+    display: block;
+}
+
+a {
+    color: #add8e6; /* Light blue color */
+    text-decoration: none; /* Optional: removes the underline from links */
+}
+
+a:hover {
+    color: #87cefa; /* Slightly darker blue on hover for visual feedback */
+    text-decoration: underline; /* Optional: adds an underline on hover */
+}
+
+/* Style for gradient buttons... */
+
+/* Base style for gradient buttons */
+.btn-grad {
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    border-radius: 0px;
+    display: inline-block; /* Side-by-side layout */
+    font-family: 'adobe-handwriting-ernie', sans-serif; /* Adobe font */
+    border: none; /* Remove border */
+    margin: 0; /* Remove space between buttons */
+    box-shadow: none; /* Remove glow */
+    font-family: 'adobe-handwriting-ernie', sans-serif; /* Applying font to buttons */
+    font-weight: 400;
+    font-style: normal;
+}
+
+.btn-grad:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Individual button gradients */
+.btn-dawn {
+    background-image: linear-gradient(to right, #f7e4ae, #f6d365); /* Dawn colors */
+}
+
+.btn-day {
+    background-image: linear-gradient(to right, #56ccf2, #2f80ed); /* Day colors */
+}
+
+.btn-dusk {
+    background-image: linear-gradient(to right, #fa709a, #fee140); /* Dusk colors */
+}
+
+.btn-night {
+    background-image: linear-gradient(to right, #000046, #1cb5e0); /* Night colors */
+}
+
+.btn-twilight {
+    background-image: linear-gradient(to right, #654ea3, #eaafc8); /* Twilight colors */
+}
+
+
+/* Styles to make the scrollbar invisible */
+.section::-webkit-scrollbar {
+    width: 0px; /* For Webkit browsers */
+}
+
+.section {
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    scrollbar-width: none; /* For Firefox */
+}
+
+
+.gold-fade {
+    font-size: 6em; /* Adjust size as needed */
+    background: -webkit-linear-gradient(111.4deg,  rgba(238,113,113,1) 1%, rgba(246,215,148,1) 58%); /* Gold to light */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block; /* Necessary for gradients on text */
+}
