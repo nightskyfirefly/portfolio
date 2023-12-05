@@ -17,55 +17,57 @@ body, html {
     background-size: cover;
     color: #ffe993;
     overflow: auto;
+    overflow-x: hidden;
 }
 
-
+/* navbar and navbar link */
 .navbar {
     position: fixed;
     top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
-    background: rgba(0, 0, 0, 0.5);
+    right: 0; /* Align to the top-right */
+    padding: 10px 20px; /* Padding for spacing */
+    text-align: right; /* Align text to the right */
 }
 
-.navbar img {
-    margin: 0 15px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    width: 50px; /* Adjust the button size */
-    height: auto;
+.navbar a {
+    font-family: 'Montserrat', sans-serif; /* Applying Montserrat font */
+    font-weight: 900; /* Black weight */
+    font-style: normal; /* Normal font style */
+    color: #add8e6; /* Light blue color for links */
+    margin-left: 20px; /* Spacing between links */
+    text-decoration: none; /* Removes underline */
+    font-size: 1em; /* Adjust as needed */
 }
 
-.navbar img:hover {
-    transform: translateY(-5px);
+.navbar a:hover {
+    color: #87cefa; /* Slightly darker blue on hover */
 }
 
 /* Content container styling */
 .content {
-    padding-top: 100px; /* Space for navbar */
+    padding-top: 50px; /* Adjust as needed */
+    padding-bottom: 50px; /* Adjust as needed */
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    min-height: calc(100vh - 100px); /* Full height minus navbar and padding */
 }
 
 .section {
     display: none;
     padding: 20px;
-    margin: auto; /* Center the section */
-    min-width: 600;
+    margin: 20px auto; /* Center the section */
+    min-width: 600px;
     max-width: 600px; /* Set a maximum width for the content */
-    width: 100%; /* Use the full width up to the max-width */
+    width: 80%; /* Use the full width up to the max-width */
     box-sizing: border-box; /* Include padding in the width calculation */
     background-color: rgba(0, 0, 0, 0.4); /* Dark background with 60% opacity */
     border-radius: 8px; /* Optional: if you want rounded corners */
-    padding: 20px; /* Padding inside the section */
-    margin: 20px auto; /* Margin for centering and spacing between sections */
-    width: 80%; /* Fixed width for all sections */
     min-height: 700px; /* Minimum height for all sections */
     max-height: 700px; /* Adjust as needed */
     overflow-y: auto; /* Allows vertical scrolling */
+    margin-top: auto; /* Helps vertically center */
+    margin-bottom: auto; /* Helps vertically center */
     
 }
 
@@ -87,6 +89,8 @@ body, html {
     display: block;
 }
 
+
+/* text box links */
 a {
     color: #add8e6; /* Light blue color */
     text-decoration: none; /* Optional: removes the underline from links */
@@ -94,11 +98,21 @@ a {
 
 a:hover {
     color: #87cefa; /* Slightly darker blue on hover for visual feedback */
-    text-decoration: underline; /* Optional: adds an underline on hover */
+    text-decoration: none;
 }
 
-/* Style for gradient buttons... */
 
+@media screen and (max-width: 768px) {
+    /* Adjust styles for smaller screens */
+    .section {
+        width: 95%; /* Example: Use a higher percentage of the width on small screens */
+        max-height: none; /* Example: Remove max-height restriction */
+    }
+    /* ... other responsive styles ... */
+}
+
+
+/* Style for gradient buttons... */
 /* Base style for gradient buttons */
 .btn-grad {
     padding: 15px 45px;
@@ -156,8 +170,33 @@ a:hover {
     scrollbar-width: none; /* For Firefox */
 }
 
+/* Styling the scrollbar track (the part the thumb moves along) */
+.section::-webkit-scrollbar-track {
+    background-color: transparent; /* Makes the track invisible */
+}
+
+/* Styling the scrollbar thumb (the part that you drag) */
+.section::-webkit-scrollbar-thumb {
+    background-color: #add8e6; /* Light blue color, similar to your link color */
+    border-radius: 10px; /* Rounded corners for the thumb */
+    border: 2px solid black; /* Optional: adds a border around the thumb */
+}
+
+/* Firefox scrollbar styling */
+.section {
+    scrollbar-width: thin; /* 'auto' or 'thin' */
+    scrollbar-color: #add8e6 transparent; /* Thumb and track color */
+}
+
+/* Adjusting the width of the scrollbar */
+.section::-webkit-scrollbar {
+    width: 12px; /* Adjust as needed */
+}
+
 
 .gold-fade {
+    line-height: 1.5;
+    padding-bottom: 15px;
     font-size: 6em; /* Adjust size as needed */
     background: -webkit-linear-gradient(111.4deg,  rgba(238,113,113,1) 1%, rgba(246,215,148,1) 58%); /* Gold to light */
     -webkit-background-clip: text;

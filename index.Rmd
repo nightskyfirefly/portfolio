@@ -22,6 +22,11 @@ I am currently furthering my education with the aim of earning a Master’s in D
 Please feel free to explore my projects, and do not hesitate to reach out if you have any questions or would like to discuss potential collaborations. Thank you for visiting, and I look forward to connecting with fellow data enthusiasts!
 
 
+I am also working on a portfolio page with CSS, HTML and JavaScript. It will replace this current portfolio when complete.
+
+Get a preview of it here: [**Portfolio in progress**](https://nightskyfirefly.github.io/portfolio/index/index.html)
+
+
 ## Certifications
 
 - [**Google Data Analytics Certification**](https://coursera.org/share/a2f186954990e25e6aca88c97c518dde)
