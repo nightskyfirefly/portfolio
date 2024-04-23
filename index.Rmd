@@ -31,6 +31,8 @@ Get a preview of it here: [**Portfolio in progress**](https://nightskyfirefly.gi
 
 - [**Google Data Analytics Certification**](https://coursera.org/share/a2f186954990e25e6aca88c97c518dde)
 
+- UVM Digital Marketing Certification
+
 ## Resume
 
 - [**Resume link**](https://nightskyfirefly.github.io/portfolio/resume.html)
@@ -38,6 +40,19 @@ Get a preview of it here: [**Portfolio in progress**](https://nightskyfirefly.gi
 ## Projects
 
 These projects are a product of self-direction and independent exploration, showcasing my ability to identify interesting and relevant questions, gather and clean the necessary data, conduct comprehensive analyses, and communicate the findings effectively. Each project is accompanied by a full set of data analysis code as well as detailed summary reports tailored for stakeholders. The initiative taken in these projects demonstrates my proactive approach and my capability to drive investigations from start to finish, delivering actionable insights and valuable knowledge.
+
+
+### Large Projects
+
+Here is my latest project, which involved writing several intricate Python scripts to scrape data from the web and generate a dataset for my personal use.
+
+- [**Fragrance Exploratory Data Analysis**](https://nightskyfirefly.github.io/portfolio/Fragrance_Analysis_1.html)
+
+
+
+### Archived Projects
+
+These will eventually be removed from the main portfolio but still accessable through an archive link.
 
 #### Python
 - [**Rural Business Marketing Strategy**](https://nightskyfirefly.github.io/portfolio/vermont/RuralBusiness.html)
