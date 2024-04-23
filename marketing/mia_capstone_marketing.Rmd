@@ -1,0 +1,69 @@
+---
+title: 'Increasing Online Revenue Through Product Giveaway: Starling Alchemy'
+author: "Mia Murphy"
+date: "2024-02-07"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# Capstone Project Outline: Starling Alchemy
+
+## Challenge Overview
+
+The primary challenge for **Starling Alchemy**, a nascent indie perfumery specializing in small-batch, limited-release perfumes, is to boost online sales revenue. The strategy involves leveraging a product giveaway to generate buzz, increase website traffic, newsletter sign-ups, and social media engagement. Participants must fulfill specific actions to enter the raffle, aiming to create a viral loop.
+
+## Target Audience
+
+The campaign targets fragrance enthusiasts who appreciate artisanal, niche scents, especially millennials and Gen Z consumers active on social media platforms and who value uniqueness, quality, and sustainability.
+
+## Strategy Overview
+
+1. **Brand Awareness and Engagement:** Utilize the product giveaway to introduce Starling Alchemy, engaging the target audience with the brand's story and product uniqueness.
+
+2. **List Building:** Grow the brand's newsletter and social media following as a long-term asset for direct marketing and engagement.
+
+3. **Sales Conversion:** Convert engaged audiences into customers by showcasing the brand's value proposition.
+
+## Tactics Supporting the Campaign
+
+- **Social Media Campaigns:** Utilize platforms like Instagram, Facebook, and Twitter to promote the giveaway, encouraging shares and tags.
+
+- **Email Marketing:** Develop a series of welcome emails for new subscribers with exclusive content and offers.
+
+- **Content Marketing:** Create content that tells the story behind Starling Alchemy’s products.
+
+- **Referral Program:** Implement a referral program for additional entries through friend sign-ups.
+
+- **SEO & PPC:** Drive organic and paid traffic related to indie perfumes and giveaways.
+
+## Channels to Include
+
+- **SEO:** Capture organic search traffic looking for indie perfumes or giveaways.
+
+- **PPC:** Drive targeted traffic to the giveaway landing page.
+
+- **Display Advertising:** Raise awareness among audiences on related blogs, forums, and websites.
+
+- **Email/SMS Marketing:** Engage directly with interested customers with updates and promotions.
+
+- **Social Media:** Create buzz, foster community, and encourage shares and follows.
+
+## Metrics and Targets
+
+1. **Newsletter Sign-ups:** Target a specific number of new subscribers.
+2. **Social Media Engagement:** Track follows, shares, and engagement rates.
+3. **Website Traffic:** Monitor visitors to the site and giveaway landing page.
+4. **Conversion Rate:** Measure the percentage of entrants who make a purchase.
+5. **Customer Acquisition Cost (CAC):** Evaluate the cost-effectiveness of the campaign.
+
+Utilizing Natural Language Processing, the campaign will gather and analyze sentiment from social media forums, specifically concentrating on the reception of individual scents. This approach aims to gauge public opinion and the popularity of each fragrance.
+
+## Key Takeaways for the Audience
+
+1. **Exclusivity and Quality:** Starling Alchemy offers unique, small-batch perfumes.
+
+2. **Community and Engagement:** The brand values its community, offering exclusive chances to win their products.
+
+3. **Sustainability and Innovation:** The brand's commitment to sustainability and innovative use of components.
+

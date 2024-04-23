@@ -1,0 +1,237 @@
+---
+title: "Q2 Marketing Strategy for TWT"
+author: "Mia Murphy"
+date: "`r format(Sys.Date(), '%B %d, %Y')`" # This will display the current date
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+# Executive Summary
+This strategic document lays out an aggressive marketing blueprint for The Woolly Thistle (TWT) in Q2, aimed at significantly amplifying market presence and doubling our baseline revenue from $400k to $800k. Capitalizing on the robust growth of the yarn and crafts industry, TWT will leverage a $44k advertising budget—rooted in our solid base revenue—to execute a series of high-impact product launches and digital marketing campaigns. 
+
+Innovative promotions for 'Rambler' yarn, the Marie Wallin book launch, and our anticipated wool blanket line will be pivotal. We'll extend our digital reach beyond traditional platforms, prioritizing Reddit's vibrant crafting communities and establishing an Etsy shop for targeted brand exposure. A multi-use storefront will serve as a venue for community knitting groups and as a creative studio for social media content, enriching our brand narrative. 
+
+Through strategic partnerships with influencers and a robust engagement campaign across social media, TWT is poised to not just meet, but potentially exceed, ambitious sales targets. Our proactive approach will include versatile email marketing, enhanced podcasting, YouTube content, and dynamic Facebook interactions to solidify TWT's position as a leader in the crafting market.
+
+# Introduction
+Amidst an evolving yarn and crafts landscape, TWT stands on the brink of a transformative Q2. Our strategy is a blend of intuition and data, poised to navigate market trends and digital opportunities with dexterity. We will drive TWT's product positioning, harnessing the power of analytics and emerging consumer patterns to bolster sales and deepen brand engagement.
+
+Our plan is detailed yet adaptable, encompassing strategic product rollouts, a diversified online campaign, and customer outreach initiatives—all designed to steward the brand through a pivotal revenue growth phase. This document is the roadmap for our strategic endeavors, underpinned by a flexible methodology that responds to live market feedback and performance metrics, ensuring TWT's trajectory is not just sustained but accelerated.
+
+\newpage
+
+# Market Analysis
+- **Global Market Growth**: The knitting yarn ball retail market was valued at USD 5,717.3 million in 2022 and is projected to grow at a CAGR of 4.8% through 2030, indicating a rising interest in knitting, particularly among younger demographics influenced by social media trends.
+- **Material Preference**: Wool, known for its sustainability and anti-static properties, remains a significant segment in the market, reflecting consumer preference for natural and eco-friendly materials.
+- **Retail Trends**: Despite a global trend towards online shopping, there's a noticeable preference for physical retail experiences in this market segment, especially among younger buyers who value the tactile experience of yarn shopping.
+
+```{r, echo=FALSE, fig.cap="Global Knitting Yarn Ball Retail Market Size Forecast (2022-2030)"}
+# R code to create the market size chart
+years <- c(2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030)
+market_size <- c(5717.3, 5993.3, 6283.7, 6589.0, 6910.3, 7248.2, 7603.5, 7977.1, 8370.0) # Estimated values
+
+plot(years, market_size, type="o", col="blue", xlab="Year", ylab="Market Size (in Million USD)", main="Global Knitting Yarn Ball Retail Market Size Forecast (2022-2030)")
+grid()
+```
+\newpage
+
+# Social Media Demographics Analysis
+
+In an effort to maximize The Woolly Thistle's (TWT) market impact, we're strategically diversifying our advertising platforms to tap into previously unexplored segments. A significant part of this strategy involves expanding our presence on Reddit, where numerous knitting communities thrive. Contrary to common perception, the age groups within these communities are remarkably diverse, offering us an opportunity to connect with a wider range of knitting enthusiasts. By targeting these specific groups, we aim to broaden TWT's reach, engage with passionate crafters, and explore new customer demographics. This move is not just about expanding our audience base; it's about deepening our understanding of and connection to the diverse world of knitters and crafters.
+
+## Facebook Demographics
+```{r facebook-demo, echo=FALSE}
+# Load the ggplot2 package for plotting
+if (!require("ggplot2")) install.packages("ggplot2")
+library(ggplot2)
+
+# Age demographics data for Facebook (approximated)
+age_groups <- c('<18', '18-24', '25-34', '35-44', '45-54', '55-64', '65+')
+percentages <- c(4, 14, 21, 24, 18, 11, 8)
+
+# Create a data frame for plotting
+facebook_data <- data.frame(age_groups, percentages)
+
+# Create the bar chart
+ggplot(facebook_data, aes(x=age_groups, y=percentages, fill=age_groups)) +
+  geom_bar(stat="identity") +
+  theme_minimal() +
+  labs(title="Age Demographics of Facebook Users",
+       x="Age Groups",
+       y="Percentage of Users (%)",
+       fill="Age Groups") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  geom_text(aes(label=percentages), vjust=-0.3, size=3.5)
+```
+
+## Reddit and Instagram Demographics
+```{r reddit-demo, echo=FALSE}
+# Load the ggplot2 package for plotting
+if (!require("ggplot2")) install.packages("ggplot2")
+library(ggplot2)
+
+# Age demographics data for Reddit (approximated)
+age_groups <- c('<18', '18-24', '25-34', '35-44', '45-54', '55-64', '65+')
+percentages <- c(5, 30, 35, 15, 10, 4, 1)
+
+# Create a data frame for plotting
+reddit_data <- data.frame(age_groups, percentages)
+
+# Create the bar chart
+ggplot(reddit_data, aes(x=age_groups, y=percentages, fill=age_groups)) +
+  geom_bar(stat="identity") +
+  theme_minimal() +
+  labs(title="Age Demographics of Reddit Users",
+       x="Age Groups",
+       y="Percentage of Users (%)",
+       fill="Age Groups") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  geom_text(aes(label=percentages), vjust=-0.3, size=3.5)
+```
+```{r insta-demo, echo=FALSE}
+# Load the ggplot2 package for plotting
+if (!require("ggplot2")) install.packages("ggplot2")
+library(ggplot2)
+
+# Age demographics data for Instagram (approximated)
+age_groups <- c('<18', '18-24', '25-34', '35-44', '45-54', '55-64', '65+')
+percentages <- c(8, 30, 33, 16, 8, 4, 1)
+
+# Create a data frame for plotting
+instagram_data <- data.frame(age_groups, percentages)
+
+# Create the bar chart
+ggplot(instagram_data, aes(x=age_groups, y=percentages, fill=age_groups)) +
+  geom_bar(stat="identity") +
+  theme_minimal() +
+  labs(title="Age Demographics of Instagram Users",
+       x="Age Groups",
+       y="Percentage of Users (%)",
+       fill="Age Groups") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  geom_text(aes(label=percentages), vjust=-0.3, size=3.5)
+```
+
+# Marketing Strategy Development
+
+## Advertising Platform Budget
+- **Facebook (20% - $8,800)**:
+  - Broad and diverse user base, ideal for a wide reach.
+  - Advanced targeting options for precise audience segmentation.
+
+- **Instagram (25% - $11,000)**:
+  - Visually-driven platform, perfect for showcasing products.
+  - Integrated with Facebook's ad system for cross-platform campaigns.
+
+- **TikTok (15% - $6,600)**:
+  - High engagement rates with younger audiences.
+  - Ideal for interactive and creative content.
+
+- **Reddit (15% - $6,600)**:
+  - Targeted engagement in niche communities.
+  - Crucial for brand presence in specific interest groups.
+
+- **Google Ads (25% - $11,000)**:
+  - Extensive reach across the internet.
+  - Versatile in targeting options and ad formats.
+
+```{r advertisingpie, echo=FALSE}
+# Load necessary library
+if (!require("ggplot2")) install.packages("ggplot2")
+library(ggplot2)
+
+# Data for the plot
+platforms <- c("Facebook", "Instagram", "TikTok", "Reddit", "Google Ads")
+percentages <- c(20, 25, 15, 15, 25)
+
+# Create a data frame
+budget_data <- data.frame(platforms, percentages)
+
+# Create a pie chart
+ggplot(budget_data, aes(x="", y=percentages, fill=platforms)) +
+  geom_bar(width = 1, stat = "identity") +
+  coord_polar("y", start=0) +
+  theme_void() +
+  theme(legend.title = element_blank()) +
+  labs(title = "TWT Advertising Budget Allocation for Q2") +
+  theme(plot.title = element_text(hjust = 0.5)) # Center the title
+```
+
+\newpage
+
+## Product Launch Strategies
+- **Rambler Yarn**: Aggressive social media and influencer campaign targeting $50k in April.
+- **Marie Wallin Book & Yarn Kits**: Leverage existing fanbase for a May launch, aiming for $50k.
+- **Wool Blanket Line**: June introduction, utilizing an Etsy shop for wider exposure and a $50k target.
+- **Unnamed Product Launches**: Explore more kit offerings, aiming for a $90k combined target in May.
+
+## Social Media and Content Creation
+- **Multi-Use Storefront**: Utilize our physical shop for community knitting events and as a content creation hub for social media.
+- **Reddit Engagement**: Conduct targeted campaigns in crafting communities for brand exposure.
+
+## Influencer and Ambassador Programs
+- Collaborate with key influencers in the crafting community to extend our reach.
+- Initiate a brand ambassador program to drive organic growth and customer loyalty.
+
+## Multichannel Engagement
+- Enhance TWT's podcast and YouTube content with tutorials and community features.
+- Roll out strategic email marketing campaigns to engage and inform our audience.
+
+## Risks and Alternatives
+- **Social Media Pivot**: If ROI on platforms like Facebook falters, increase focus on Reddit.
+- **Content Strategy Adjustment**: Address content gaps with influencer collaboration and user-generated content.
+- **Etsy Shop as Brand Exposure**: Use Etsy for brand visibility, directing traffic to our main e-commerce platform.
+
+# Key Metrics
+- **Sales Revenue**: Monitor and compare sales figures for each product launch.
+- **Social Media Engagement**: Track growth and engagement across all platforms.
+- **Web Traffic Analysis**: Assess the increase in traffic to both TWT's main site and Etsy shop.
+- **Advertising ROI**: Focus on evaluating the ROI from Reddit and other advertising channels.
+
+\newpage
+
+# Timeline
+**Timeline for TWT's Q2 Marketing Strategy**
+
+## April
+- Week 1: Strategy finalization.
+- Week 3: Rambler Yarn Launch.
+
+## May
+- Week 2: Marie Wallin Book Launch.
+- Weeks 3-4: Unnamed Product Launches.
+
+## June
+- Week 1: Wool Blanket Launch.
+- Week 4: CT Sweater Design Launch.
+
+# Key Dates and Goals
+- April: Rambler Yarn Launch ($50k target).
+- May: Marie Wallin Book Launch ($50k target), Unnamed Launches ($90k target).
+- June: Wool Blanket Launch ($50k target), CT Sweater Design ($80k target).
+- Overall Q2 Goal: $800k revenue.
+
+# Conclusion
+In conclusion, this strategy is designed to dynamically position TWT at the forefront of the yarn and crafts industry, leveraging both traditional and digital channels to maximize our market impact. The multifaceted approach, encompassing product launches, a strong online presence, and community engagement, aims to not only achieve but exceed our ambitious Q2 revenue goals. As we progress, continuous analysis and adaptability will be key in navigating the evolving market landscape, ensuring TWT's sustained growth and success.
+
+\newpage
+
+# Testimonials
+What do people say about The Woolly Thistle?
+
+- Great selection of wools
+- Amazing customer service
+- Wonderful podcast with room for improvement; they want more, including tutorials
+- Some locals wish they could shop in person and see all of the different wools
+- Praised for stocking Marie Wallin's kits and books
+
+The Woolly Thistle is mentioned regularly on Reddit across different communities. This suggests that TWT should be using Reddit advertising and engagement on the platform, offering help to questions to gain further visibility, or advertise new podcasts.
+
+![Testimonial](Capture.png)
+![Testimonial](Capture2.png)
+![Testimonial](Capture3.png)
+![Testimonial](Capture4.png)
+![Testimonial](Capture5.png)
+![Testimonial](Capture6.png)
