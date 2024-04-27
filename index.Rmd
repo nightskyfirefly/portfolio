@@ -46,7 +46,7 @@ These projects are a product of self-direction and independent exploration, show
 
 Here is my latest project, which involved writing several intricate Python scripts to scrape data from the web and generate a dataset for my personal use.
 
-- [**Fragrance Exploratory Data Analysis**](https://nightskyfirefly.github.io/portfolio/Fragrance_Analysis_1.html)
+- [**Fragrance Exploratory Data Analysis**](https://nightskyfirefly.github.io/portfolio/projects/Fragrance_Analysis_1.html)
 
 
 
@@ -57,18 +57,18 @@ These will eventually be removed from the main portfolio but still accessable th
 #### Python
 - [**Rural Business Marketing Strategy**](https://nightskyfirefly.github.io/portfolio/vermont/RuralBusiness.html)
 - [**Vermont Disaster Preparation**](https://nightskyfirefly.github.io/portfolio/vermont/Vermont_Disaster.html)
-- [**Real Estate data set analysis using Python**](https://nightskyfirefly.github.io/portfolio/MiaRealEstatePython.html)
+- [**Real Estate data set analysis using Python**](https://nightskyfirefly.github.io/portfolio/projects/MiaRealEstatePython.html)
 - [**Real Estate data set data visualization using Bokeh in Python**](https://nightskyfirefly.github.io/portfolio/MiaPythonBokeh.html)
 
 #### R
 
-- [**Real Estate data analysis using R. Pt. 1**](https://nightskyfirefly.github.io/portfolio/Mia_Real_Estate_Analysis.html)
-- [**Real Estate data analysis using R. Pt. 2**](https://nightskyfirefly.github.io/portfolio/Mia_Oldtown.html)
-- [**Real Estate data analysis using R. Pt. 3**](https://nightskyfirefly.github.io/portfolio/Mia_Oldtown_Summary.html)
+- [**Real Estate data analysis using R. Pt. 1**](https://nightskyfirefly.github.io/portfolio/projects/Mia_Real_Estate_Analysis.html)
+- [**Real Estate data analysis using R. Pt. 2**](https://nightskyfirefly.github.io/portfolio/projects/Mia_Oldtown.html)
+- [**Real Estate data analysis using R. Pt. 3**](https://nightskyfirefly.github.io/portfolio/projects/Mia_Oldtown_Summary.html)
 
 #### SQL
 
-- [**Creating a data set in SQL and performing a full data analysis**](https://nightskyfirefly.github.io/portfolio/MiaSQLCoffee.html)
-- [**Writing a summary report for the above data analysis**](https://nightskyfirefly.github.io/portfolio/MiaCoffeeSummary.html)
+- [**Creating a data set in SQL and performing a full data analysis**](https://nightskyfirefly.github.io/portfolio/projects/MiaSQLCoffee.html)
+- [**Writing a summary report for the above data analysis**](https://nightskyfirefly.github.io/portfolio/projects/MiaCoffeeSummary.html)
 
 #### Tableau
