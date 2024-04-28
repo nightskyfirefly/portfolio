@@ -13,14 +13,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Welcome to My Data Analytics Portfolio!
 
-Hello, I’m Mia Murphy, a passionate data analyst with a foundation in Economics and Statistics from the University of Vermont. My journey into the world of data began in the classrooms of UVM and has since evolved through hands-on experiences in various data-driven roles. With a deep-seated passion for uncovering insights from complex datasets, I have honed my skills in statistical analysis, data visualization, and programming.
+Hello, I’m Mia Murphy—a dynamic full-stack Data Analyst and seasoned Digital Marketing Specialist with over 22 years of experience in graphic design and web consultancy. My academic journey began at the University of Vermont, where I earned a degree in Economics and Statistics, setting the foundation for my data-driven career. I am currently advancing my expertise through a Master's in Data Science, specializing in sophisticated data analysis and visualization techniques.
 
-This portfolio is a curated collection of my work, showcasing my ability to translate raw data into clear, actionable insights. From sustainable fashion trends to e-commerce optimization, each project represents a piece of my journey in data analytics. My proficiency in tools such as R, Python, Tableau, and SAS is demonstrated through the diverse range of projects presented here.
+This portfolio is a meticulously curated showcase of my work, demonstrating my prowess in translating complex data into strategic insights. My projects span sustainable fashion analytics to e-commerce optimization, each reflecting my journey and growth in the field. Armed with advanced skills in R, Python, Tableau, SAS, and full-stack web technologies, I offer a comprehensive toolkit to drive data intelligence and enhance marketing strategies.
 
-I am currently furthering my education with the aim of earning a Master’s in Data Science, with a special focus on data analysis and visualization. My goal is to continuously expand my skill set and contribute meaningful insights to the field of data analytics.
+With my extensive background as a Graphic Artist and Web Designer, I bring a unique perspective to digital marketing and data analytics. My ability to integrate visual design with data science allows me to uncover and leverage insights that traditional analytics might overlook. I will find valuable insights and trends that automated third-party software will miss. This fusion of skills empowers businesses to capture nuanced market trends and engage customers more effectively.
 
-Please feel free to explore my projects, and do not hesitate to reach out if you have any questions or would like to discuss potential collaborations. Thank you for visiting, and I look forward to connecting with fellow data enthusiasts!
+As I continue to refine my portfolio using CSS, HTML, and JavaScript, I invite you to preview my ongoing projects here. My goal is to deliver actionable insights and robust data-driven strategies that propel your business forward.
 
+Thank you for visiting. I am eager to explore potential collaborations and connect with other data and marketing professionals. Let's harness the power of data and creativity to uncover new opportunities together!
 
 I am also working on a portfolio page with CSS, HTML and JavaScript. It will replace this current portfolio when complete.
 
@@ -32,6 +33,8 @@ Get a preview of it here: [**Portfolio in progress**](https://nightskyfirefly.gi
 - [**Google Data Analytics Certification**](https://coursera.org/share/a2f186954990e25e6aca88c97c518dde)
 
 - UVM Digital Marketing Certification
+
+- UVM Data Analytics for Business Certification
 
 ## Resume
 

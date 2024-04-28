@@ -8,59 +8,42 @@ output: rmdformats::downcute
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
 # Mia Murphy
+Quechee, VT 05059  
+📧 [miamurphyvt@gmail.com](mailto:miamurphyvt@gmail.com)  
+🌐 [Portfolio](https://nightskyfirefly.github.io/portfolio) | [GitHub](https://github.com/nightskyfirefly)
 
-**Location:** Quechee, Vermont  
-**Email:** [miamurphyvt@gmail.com](mailto:miamurphyvt@gmail.com)  
-
-I am an enthusiastic data analyst with a strong educational background in Economics and Statistics from the University of Vermont, enhanced by hands-on experience in data-driven roles. My academic journey includes advanced coursework in statistical analysis, coupled with extensive programming in Python, Java, and data analysis using tools like R, Tableau, and SAS. Currently in the pursuit of a Master’s in Data Science, I am eager to specialize in data analysis and visualization, translating complex data sets into actionable insights.
+## Profile
+Meticulous full stack Data Analyst with a robust background in Economics and Statistics, bolstered by 2 years of experience in quantitative research and data-driven roles. Possesses over 22 years of expertise in Adobe Photoshop as a graphic artist and web designer, enhancing marketing and visual communication strategies. Digital marketing analyst specializing in SEO, content & mobile marketing, competitor analysis, PPC and web analytics. Proficient in designing and implementing comprehensive data analysis strategies using Python, R, SQL, D3, and Tableau. Currently pursuing a Master’s in Data Science with a focus on predictive modeling and advanced data visualization. My portfolio showcases a range of projects that highlight my ability to translate complex data sets into clear, actionable insights.
 
 ## Work Experience
 
-### Research Analyst
-_2023-Present_
+### Data Analyst - Better Buying (2023–2024)
+- Utilized predictive analytics and machine learning algorithms to forecast trends and behaviors in the sustainable apparel industry supply chains and manufacturers.
+- Produced in-depth sustainability analytics reports, enhancing strategic decision-making across supply chain and operations departments for companies like Amazon, Nike, Patagonia, and more.
+- Led the integration of big data analytics tools to elevate data accuracy and actionable insights in cross-departmental collaboration, including interactive Tableau dashboards for dynamic data visualization to facilitate data storytelling to executive stakeholders.
+- Expertly managed and executed email marketing campaigns using Mailchimp and HTML, achieving a 20% increase in engagement rates by designing responsive and visually appealing email templates that enhanced user experience.
 
-- Spearheaded data analysis on sustainable fashion, driving actionable insights for industry leaders like Amazon and Nike.
-- Utilized statistical models to conduct trend analyses, identifying emerging sustainability opportunities.
-- Designed and delivered data-rich sustainability reports, setting and monitoring key performance metrics.
-- Collaborated cross-functionally, ensuring seamless data integration across marketing and product initiatives.
-
-### Amazon E-commerce Specialist (Internship)
-_2023_
-
-- Leveraged data analytics to boost online sales revenue by 100% within 2 months.
-- Employed trend analysis and market research, optimizing product positioning and predicting high-demand products.
-- Utilized AWS tools to analyze website traffic data, identifying trends and driving platform optimization.
-- Collaborated with teams to align Amazon sales data with broader business strategies and objectives.
+### Digital Marketing E-commerce & Web Specialist - Ann Clark (2022-2023)
+- Drove revenue boost through strategic data analysis, SEO optimization, rigorous A/B testing methodologies, and predictive analysis to anticipate market trends and identify emerging high-demand products.
+- Leveraged AWS analytics and SEO tools to enhance digital marketing efforts and bolstered e-commerce user experience and conversion rates.
+- Orchestrated data synthesis across platforms, aligning Amazon analytics with enterprise-wide KPIs to inform broader business strategies.
+- Pioneered the adoption of advanced analytics techniques, including customer segmentation, lifetime value analysis, and churn rate prediction, using Python and R.
 
 ## Education
 
-- **2020-2022**: Bachelor’s in Economics, University of Vermont  
-  _Minors:_ Biology, Statistics
-
-## Certifications
-
-- [**Google Data Analytics Certification**](https://coursera.org/share/a2f186954990e25e6aca88c97c518dde)
+### University of Vermont
+**Bachelor of Arts in Economics and Statistics**, GPA: 3.8 (2019–2022)  
+Extensive coursework in data analysis, programming, and statistical computing.
 
 ## Skills
+- **Data Analysis**: SQL, R, Python, D3, Tableau, SAS, Power BI, Excel
+- **Programming**: Java, LaTeX, HTML, CSS
+- **Tools**: Adobe Creative Cloud, Google Suite, Microsoft Office
+- **Other**: Copywriting, Email Marketing, SEO Optimization, A/B Testing
 
-### Data Analysis Tools
-SQL, R, Tableau, SAS, Power BI, Microsoft Excel
+## Certifications
+- 2024: UVM Digital Marketing Certification
+- 2023: UVM Data Analytics for Business in Excel and Python Certification
+- 2023: Google Data Analytics Certification
 
-### Programming
-Python, Java, LaTeX, HTML, CSS
-
-### Other Skills
-Data Analytics, Database Management, Research, Adobe Creative Cloud (Photoshop, InDesign, Illustrator), Google Suite, Microsoft Suite, Website Development
-
-## Relevant Courses
-
-- **Data Visualization – Economic Development and Policy**  
-  Utilized Excel and R for data cleaning, analysis, and visualization; Led technical projects.
-
-- **Programming – Python and Java**  
-  Acquired proficiency in structured and organized code development.
-
-- **Statistics and Data Analysis**  
-  Mastered statistical computing, biostatistics, and epidemiology using SAS and R.
