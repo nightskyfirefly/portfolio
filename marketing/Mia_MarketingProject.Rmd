@@ -1,11 +1,11 @@
 ---
 title: "Q2 Marketing Strategy for TWT"
 author: "Mia Murphy"
-date: "`r format(Sys.Date(), '%B %d, %Y')`" # This will display the current date
+date: "January 25, 2024" # This will display the current date
 output:
-  pdf_document: default
   html_document:
     df_print: paged
+  pdf_document: default
 ---
 
 # Executive Summary
@@ -19,6 +19,8 @@ Through strategic partnerships with influencers and a robust engagement campaign
 Amidst an evolving yarn and crafts landscape, TWT stands on the brink of a transformative Q2. Our strategy is a blend of intuition and data, poised to navigate market trends and digital opportunities with dexterity. We will drive TWT's product positioning, harnessing the power of analytics and emerging consumer patterns to bolster sales and deepen brand engagement.
 
 Our plan is detailed yet adaptable, encompassing strategic product rollouts, a diversified online campaign, and customer outreach initiatives—all designed to steward the brand through a pivotal revenue growth phase. This document is the roadmap for our strategic endeavors, underpinned by a flexible methodology that responds to live market feedback and performance metrics, ensuring TWT's trajectory is not just sustained but accelerated.
+
+TWT has expressed that their current advertising budget is solely focused on Facebook advertising. This brings the ultimate goal of dispersing the advertising budget to other platforms to reach new audiences.
 
 \newpage
 
@@ -138,25 +140,31 @@ ggplot(instagram_data, aes(x=age_groups, y=percentages, fill=age_groups)) +
   - Versatile in targeting options and ad formats.
 
 ```{r advertisingpie, echo=FALSE}
-# Load necessary library
-if (!require("ggplot2")) install.packages("ggplot2")
+# Load necessary libraries
+if (!require("ggplot2")) install.packages("ggplot2", dependencies = TRUE)
 library(ggplot2)
 
-# Data for the plot
+# Data
 platforms <- c("Facebook", "Instagram", "TikTok", "Reddit", "Google Ads")
 percentages <- c(20, 25, 15, 15, 25)
 
 # Create a data frame
-budget_data <- data.frame(platforms, percentages)
+data <- data.frame(platforms, percentages)
 
 # Create a pie chart
-ggplot(budget_data, aes(x="", y=percentages, fill=platforms)) +
+pie_chart <- ggplot(data, aes(x = "", y = percentages, fill = platforms)) +
   geom_bar(width = 1, stat = "identity") +
-  coord_polar("y", start=0) +
+  coord_polar(theta = "y") +
+  labs(fill = "Platforms", title = "TWT") +
+  geom_text(aes(label = paste(percentages, "%")), position = position_stack(vjust = 0.5)) +
   theme_void() +
   theme(legend.title = element_blank()) +
   labs(title = "TWT Advertising Budget Allocation for Q2") +
-  theme(plot.title = element_text(hjust = 0.5)) # Center the title
+  theme(plot.title = element_text(hjust = 0.5))
+
+# Show the pie chart
+print(pie_chart)
+
 ```
 
 \newpage
@@ -214,7 +222,11 @@ ggplot(budget_data, aes(x="", y=percentages, fill=platforms)) +
 - Overall Q2 Goal: $800k revenue.
 
 # Conclusion
-In conclusion, this strategy is designed to dynamically position TWT at the forefront of the yarn and crafts industry, leveraging both traditional and digital channels to maximize our market impact. The multifaceted approach, encompassing product launches, a strong online presence, and community engagement, aims to not only achieve but exceed our ambitious Q2 revenue goals. As we progress, continuous analysis and adaptability will be key in navigating the evolving market landscape, ensuring TWT's sustained growth and success.
+In conclusion, this strategy is designed to dynamically position TWT at the forefront of the yarn and crafts industry, leveraging both traditional and digital channels to maximize our market impact. The multifaceted approach, encompassing product launches, a strong online presence, and community engagement, aims to not only achieve but exceed our ambitious Q2 revenue goals. 
+
+As we progress, continuous analysis and adaptability will be key in navigating the evolving market landscape, ensuring TWT's sustained growth and success.
+
+Advertising should be monitored consistently, as the point of redistributing the budget is to acquire a new customer base and reduce the impact of diminishing returns in Facebook advertising. If one area of advertising is proving to be nonproductive, then the budget can be redistributed back to Facebook if necessary.
 
 \newpage
 
@@ -227,7 +239,7 @@ What do people say about The Woolly Thistle?
 - Some locals wish they could shop in person and see all of the different wools
 - Praised for stocking Marie Wallin's kits and books
 
-The Woolly Thistle is mentioned regularly on Reddit across different communities. This suggests that TWT should be using Reddit advertising and engagement on the platform, offering help to questions to gain further visibility, or advertise new podcasts.
+The Woolly Thistle is mentioned regularly on Reddit across different communities. This suggests that TWT should be using Reddit advertising and engagement on the platform, offering help to questions to gain further visibility, or advertise new podcasts. Reddit is a younger audience than Facebook, further supporting the need to properly disperse the advertising budget across multiple platforms.
 
 ![Testimonial](Capture.png)
 ![Testimonial](Capture2.png)

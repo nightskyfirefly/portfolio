@@ -54,6 +54,11 @@ Here is my latest project, which involved writing several intricate Python scrip
 - [**Fragrance Exploratory Data Analysis**](https://nightskyfirefly.github.io/portfolio/projects/Fragrance_Analysis_1.html)
 
 
+### Marketing & Consulting
+
+- [**Consulting TWT - pt.1 Full Version**](https://nightskyfirefly.github.io/portfolio/marketing/Mia_Consulting_Full.html)
+- [**Consulting TWT - pt.2 Summary**](https://nightskyfirefly.github.io/portfolio/marketing/Mia_Consulting_Summary.pdf)
+
 
 ### Archived Projects
 
