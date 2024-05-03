@@ -63,7 +63,7 @@ These will eventually be removed from the main portfolio but still accessable th
 - [**Rural Business Marketing Strategy**](https://nightskyfirefly.github.io/portfolio/vermont/RuralBusiness.html)
 - [**Vermont Disaster Preparation**](https://nightskyfirefly.github.io/portfolio/vermont/Vermont_Disaster.html)
 - [**Real Estate data set analysis using Python**](https://nightskyfirefly.github.io/portfolio/projects/MiaRealEstatePython.html)
-- [**Real Estate data set data visualization using Bokeh in Python**](https://nightskyfirefly.github.io/portfolio/MiaPythonBokeh.html)
+- [**Real Estate data set data visualization using Bokeh in Python**](https://nightskyfirefly.github.io/portfolio/projects/MiaPythonBokeh.html)
 
 #### R
 
@@ -75,5 +75,3 @@ These will eventually be removed from the main portfolio but still accessable th
 
 - [**Creating a data set in SQL and performing a full data analysis**](https://nightskyfirefly.github.io/portfolio/projects/MiaSQLCoffee.html)
 - [**Writing a summary report for the above data analysis**](https://nightskyfirefly.github.io/portfolio/projects/MiaCoffeeSummary.html)
-
-#### Tableau
