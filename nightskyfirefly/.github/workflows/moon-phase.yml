@@ -1,0 +1,141 @@
+name: 🌙 Update Moon Phase
+
+on:
+  schedule:
+    # Runs every 6 hours to keep moon phase current
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # Allows manual trigger
+  push:
+    branches:
+      - main
+
+jobs:
+  update-moon-phase:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: 🌌 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🌙 Calculate Moon Phase
+        id: moon
+        run: |
+          # Calculate moon phase based on synodic month (~29.53 days)
+          # Reference: New Moon on January 6, 2000 at 18:14 UTC
+          
+          # Get current timestamp
+          now=$(date +%s)
+          
+          # Known new moon reference (Jan 6, 2000 18:14 UTC)
+          reference=947182440
+          
+          # Synodic month in seconds (29.53058867 days)
+          synodic=2551442.8
+          
+          # Calculate days into current lunar cycle
+          elapsed=$((now - reference))
+          cycle=$(echo "$elapsed $synodic" | awk '{printf "%.2f", ($1 % $2) / 86400}')
+          day=$(echo "$cycle" | awk '{printf "%d", $1}')
+          
+          echo "Moon cycle day: $day"
+          
+          # Determine phase based on day
+          if [ $day -lt 1 ]; then
+            phase="🌑"
+            name="New Moon"
+            desc="The darkness before dawn"
+            position="New"
+          elif [ $day -lt 7 ]; then
+            phase="🌒"
+            name="Waxing Crescent"
+            desc="The light returns"
+            position="Wax Cres"
+          elif [ $day -lt 8 ]; then
+            phase="🌓"
+            name="First Quarter"
+            desc="Half illuminated, half in shadow"
+            position="1st Qtr"
+          elif [ $day -lt 14 ]; then
+            phase="🌔"
+            name="Waxing Gibbous"
+            desc="Growing toward fullness"
+            position="Wax Gib"
+          elif [ $day -lt 16 ]; then
+            phase="🌕"
+            name="Full Moon"
+            desc="Radiant and complete"
+            position="Full"
+          elif [ $day -lt 22 ]; then
+            phase="🌖"
+            name="Waning Gibbous"
+            desc="Sharing the light"
+            position="Wan Gib"
+          elif [ $day -lt 23 ]; then
+            phase="🌗"
+            name="Last Quarter"
+            desc="Reflection and release"
+            position="3rd Qtr"
+          else
+            phase="🌘"
+            name="Waning Crescent"
+            desc="Preparing for renewal"
+            position="Wan Cres"
+          fi
+          
+          echo "phase=$phase" >> $GITHUB_OUTPUT
+          echo "name=$name" >> $GITHUB_OUTPUT
+          echo "desc=$desc" >> $GITHUB_OUTPUT
+          echo "position=$position" >> $GITHUB_OUTPUT
+          echo "day=$day" >> $GITHUB_OUTPUT
+
+      - name: ✨ Update README with Moon Phase
+        run: |
+          phase="${{ steps.moon.outputs.phase }}"
+          name="${{ steps.moon.outputs.name }}"
+          desc="${{ steps.moon.outputs.desc }}"
+          position="${{ steps.moon.outputs.position }}"
+          
+          # URL encode spaces for badge
+          name_encoded=$(echo "$name" | sed 's/ /_/g')
+          desc_encoded=$(echo "$desc" | sed 's/ /_/g')
+          
+          # Update the moon phase badge
+          sed -i "s|!\[Moon Phase\](https://img.shields.io/badge/.*-c9b8e8?style=for-the-badge\&labelColor=0a0a12)|![Moon Phase](https://img.shields.io/badge/${phase}_${name_encoded}-${desc_encoded}-c9b8e8?style=for-the-badge\&labelColor=0a0a12)|g" README.md
+          
+          # Update the ASCII art arrow position
+          # Create the phase indicator line
+          case "$position" in
+            "New")     arrow_line="       New  Wax   1st  Wax  Full Wan   3rd  Wan  New"
+                       pointer="        ↑" ;;
+            "Wax Cres") arrow_line="       New  Wax   1st  Wax  Full Wan   3rd  Wan  New"
+                       pointer="             ↑" ;;
+            "1st Qtr") arrow_line="       New  Wax   1st  Wax  Full Wan   3rd  Wan  New"
+                       pointer="                  ↑" ;;
+            "Wax Gib") arrow_line="       New  Wax   1st  Wax  Full Wan   3rd  Wan  New"
+                       pointer="                       ↑" ;;
+            "Full")    arrow_line="       New  Wax   1st  Wax  Full Wan   3rd  Wan  New"
+                       pointer="                            ↑" ;;
+            "Wan Gib") arrow_line="       New  Wax   1st  Wax  Full Wan   3rd  Wan  New"
+                       pointer="                                 ↑" ;;
+            "3rd Qtr") arrow_line="       New  Wax   1st  Wax  Full Wan   3rd  Wan  New"
+                       pointer="                                      ↑" ;;
+            "Wan Cres") arrow_line="       New  Wax   1st  Wax  Full Wan   3rd  Wan  New"
+                       pointer="                                           ↑" ;;
+          esac
+
+      - name: 🚀 Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Moon Phase Bot 🌙"
+          git add README.md
+          
+          # Only commit if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "🌙 Update moon phase to ${{ steps.moon.outputs.name }}"
+            git push
+          fi
+
