@@ -7,168 +7,353 @@
   <meta name="description" content="Finance × Data Professional - FP&A, P&L, dashboards, automation, and AI-driven reporting."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Quicksand:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg: #090d14;               /* Deep midnight */
-      --panel: #0e1421;            /* Slightly lighter panel */
-      --panel-2: #0b111d;          /* Alt panel */
-      --text: #e6eefc;             /* Primary text */
-      --muted: #95a3c3;            /* Secondary text */
-      --accent: #3be7ff;           /* Neon cyan */
-      --accent-2: #b26dff;         /* Electric violet */
-      --accent-3: #7dfb6c;         /* Lime glow */
-      --ok: #7dfb6c;
-      --warn: #ffd166;
-      --bad: #ff6b6b;
-      --shadow: 0 10px 30px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.02);
-      --radius: 18px;
-      --radius-sm: 12px;
-      --blur: saturate(120%) blur(0.3px);
+      --bg: #0a0a12;               /* Deep night sky */
+      --bg-mid: #0e0e1a;           /* Slightly lighter midnight */
+      --panel: #12121f;            /* Panel background */
+      --panel-2: #0d0d18;          /* Alt panel */
+      --text: #f0eef5;             /* Soft white text */
+      --muted: #b8b0cc;            /* Lavender muted */
+      --lavender: #c9b8e8;         /* Primary lavender */
+      --lavender-soft: #e0d4f5;    /* Soft lavender */
+      --aurora-pink: #f4b8c5;      /* Pastel pink */
+      --aurora-blue: #a8c8e8;      /* Pastel blue */
+      --aurora-violet: #d4a8e8;    /* Soft violet */
+      --firefly: #f5e6a3;          /* Warm firefly glow */
+      --ok: #a8d8a8;               /* Soft green */
+      --warn: #e8d4a8;             /* Soft amber */
+      --bad: #e8a8a8;              /* Soft red */
+      --shadow: 0 10px 40px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.02);
+      --radius: 20px;
+      --radius-sm: 14px;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;height:100%;}
+    html{scroll-behavior:smooth}
+    html,body{margin:0;min-height:100%;}
     body{
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
-      background: radial-gradient(1200px 800px at 10% -10%, rgba(59,231,255,.08), transparent 60%),
-                  radial-gradient(900px 600px at 90% -20%, rgba(178,109,255,.08), transparent 60%),
-                  linear-gradient(180deg, #070b12 0%, var(--bg) 30% 100%);
+      font-family: 'Quicksand', system-ui, -apple-system, sans-serif;
+      background: 
+        radial-gradient(ellipse 120% 60% at 15% -5%, rgba(201,184,232,.06), transparent 50%),
+        radial-gradient(ellipse 100% 50% at 85% 5%, rgba(168,200,232,.05), transparent 50%),
+        radial-gradient(ellipse 80% 40% at 50% 100%, rgba(244,184,197,.04), transparent 50%),
+        linear-gradient(180deg, #0d0d18 0%, var(--bg) 30%, #0a0a12 100%);
+      background-attachment: fixed;
       color: var(--text);
-      line-height:1.6;
+      line-height:1.7;
+      position: relative;
     }
-    a{color:var(--accent);text-decoration:none}
-    a:hover{opacity:.9}
+
+    /* Aurora Background Effect */
+    .aurora-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .aurora-wave {
+      position: absolute;
+      width: 200%;
+      height: 50%;
+      top: -15%;
+      left: -50%;
+      background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(201,184,232,.02) 20%,
+        rgba(168,200,232,.03) 40%,
+        rgba(244,184,197,.02) 60%,
+        transparent 100%
+      );
+      animation: auroraFlow 25s ease-in-out infinite;
+      filter: blur(60px);
+    }
+    .aurora-wave:nth-child(2) {
+      animation-delay: -8s;
+      animation-duration: 30s;
+      opacity: 0.6;
+    }
+    @keyframes auroraFlow {
+      0%, 100% { transform: translateX(-10%) rotate(-2deg); }
+      50% { transform: translateX(10%) rotate(2deg); }
+    }
+
+    /* Fireflies */
+    .fireflies {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .firefly {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: var(--firefly);
+      border-radius: 50%;
+      box-shadow: 
+        0 0 6px 2px var(--firefly),
+        0 0 12px 4px rgba(245,230,163,.3);
+      animation: fireflyFloat 15s ease-in-out infinite, fireflyGlow 4s ease-in-out infinite;
+      opacity: 0;
+    }
+    @keyframes fireflyFloat {
+      0%, 100% { transform: translate(0, 0); }
+      25% { transform: translate(40px, -25px); }
+      50% { transform: translate(-25px, -50px); }
+      75% { transform: translate(25px, -75px); }
+    }
+    @keyframes fireflyGlow {
+      0%, 100% { opacity: 0; }
+      20%, 80% { opacity: 0.8; }
+      50% { opacity: 0.3; }
+    }
+
+    a{color:var(--lavender);text-decoration:none;transition:color 0.3s ease}
+    a:hover{color:var(--lavender-soft)}
 
     /* Layout */
-    .wrap{max-width:1000px;margin:0 auto;padding:28px}
+    .wrap{max-width:900px;margin:0 auto;padding:28px;position:relative;z-index:10}
     header.nav{
-      position:sticky;top:0;z-index:50;backdrop-filter:blur(6px);
-      background:rgba(9,13,20,.65); border-bottom:1px solid rgba(255,255,255,.06);
+      position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);
+      background:rgba(10,10,18,.75); 
+      border-bottom:1px solid rgba(201,184,232,.1);
     }
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.3px}
-    .pulse{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 18px var(--accent)}
-    nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0}
-    nav a{color:var(--text);opacity:.85}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight:500;
+      font-size:20px;
+      letter-spacing:.02em
+    }
+    .pulse{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:var(--lavender);
+      box-shadow:0 0 12px var(--lavender), 0 0 24px rgba(201,184,232,.4);
+      animation: pulseSoft 3s ease-in-out infinite;
+    }
+    @keyframes pulseSoft {
+      0%, 100% { box-shadow: 0 0 12px var(--lavender), 0 0 24px rgba(201,184,232,.4); }
+      50% { box-shadow: 0 0 18px var(--lavender), 0 0 36px rgba(201,184,232,.5); }
+    }
+    .brand-glow {
+      background: linear-gradient(135deg, var(--aurora-blue), var(--lavender), var(--aurora-pink));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
+    nav a{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:500;
+      letter-spacing:0.1em;
+      text-transform:uppercase;
+      transition:color 0.3s ease
+    }
+    nav a:hover{color:var(--lavender-soft)}
 
     /* Resume Header */
-    .resume-header{padding:40px 0;text-align:center}
+    .resume-header{
+      padding:60px 0 40px;
+      text-align:center;
+    }
     .resume-title{
-      font-size:clamp(32px, 4vw, 48px); 
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size:clamp(40px, 5vw, 64px); 
       line-height:1.1; 
       margin:0 0 8px; 
-      font-weight:800;
-      background:linear-gradient(92deg, var(--accent), var(--accent-2), var(--accent-3));
+      font-weight:400;
+      letter-spacing:0.03em;
+      background:linear-gradient(135deg, var(--aurora-blue), var(--lavender-soft), var(--aurora-pink));
+      background-size: 200% 200%;
       -webkit-background-clip:text; 
       background-clip:text; 
-      color:transparent; 
-      text-shadow:0 0 0 rgba(0,0,0,0)
+      color:transparent;
+      animation: shimmer 6s ease-in-out infinite;
+    }
+    @keyframes shimmer {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
     }
     .resume-subtitle{
-      font-size:clamp(16px,1.5vw,20px);
+      font-size:clamp(14px,1.4vw,18px);
       color:var(--muted);
-      margin:0 0 20px;
+      margin:0 0 24px;
+      font-weight:300;
+      letter-spacing:0.15em;
+      text-transform:uppercase;
+    }
+    .decorative-line {
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--lavender), transparent);
+      margin: 0 auto 24px;
+      opacity: 0.6;
     }
     .contact-info{
       display:flex;
       justify-content:center;
-      gap:24px;
+      gap:28px;
       flex-wrap:wrap;
       margin-top:20px;
     }
     .contact-item{
       display:flex;
       align-items:center;
-      gap:8px;
+      gap:10px;
       color:var(--muted);
-      font-size:14px;
+      font-size:13px;
+      font-weight:400;
+      transition: color 0.3s ease;
+    }
+    .contact-item:hover {
+      color: var(--lavender);
+    }
+    .contact-item span:first-child {
+      opacity: 0.7;
     }
 
     /* Resume Sections */
-    .resume-section{padding:32px 0}
+    .resume-section{padding:40px 0}
     .section-title{
-      font-size:24px;
-      margin:0 0 20px;
-      font-weight:800;
-      background:linear-gradient(92deg, var(--accent), var(--accent-2));
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size:28px;
+      margin:0 0 24px;
+      font-weight:400;
+      letter-spacing:0.02em;
+      background:linear-gradient(135deg, var(--aurora-blue), var(--lavender-soft));
       -webkit-background-clip:text; 
       background-clip:text; 
       color:transparent;
-      border-bottom:2px solid rgba(59,231,255,.3);
-      padding-bottom:8px;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, var(--lavender), transparent);
+      opacity: 0.5;
     }
 
     /* Experience Cards */
     .experience-item{
-      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.005));
-      border:1px solid rgba(255,255,255,.06); 
+      background:linear-gradient(180deg, rgba(201,184,232,.03), rgba(168,200,232,.01));
+      border:1px solid rgba(201,184,232,.1); 
       border-radius:var(--radius); 
       box-shadow:var(--shadow); 
-      padding:24px;
+      padding:28px;
       margin-bottom:20px;
+      transition: border-color 0.4s ease, transform 0.3s ease;
+    }
+    .experience-item:hover {
+      border-color: rgba(201,184,232,.2);
+      transform: translateY(-2px);
     }
     .job-header{
       display:flex;
       justify-content:space-between;
       align-items:flex-start;
-      margin-bottom:12px;
+      margin-bottom:14px;
       flex-wrap:wrap;
-      gap:12px;
+      gap:14px;
     }
     .job-title{
-      font-size:18px;
-      font-weight:700;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size:22px;
+      font-weight:500;
       margin:0;
+      color: var(--lavender-soft);
     }
     .company{
-      color:var(--accent);
-      font-weight:600;
+      color:var(--lavender);
+      font-weight:500;
+      font-size:15px;
+      margin-top:4px;
     }
     .job-dates{
       color:var(--muted);
-      font-size:14px;
-      font-weight:600;
+      font-size:12px;
+      font-weight:500;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      background: rgba(201,184,232,.08);
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(201,184,232,.15);
     }
     .job-description{
-      color:var(--text);
+      color:var(--muted);
       margin:12px 0;
+      font-weight:300;
     }
     .job-highlights{
       list-style:none;
       padding:0;
-      margin:12px 0 0;
+      margin:16px 0 0;
     }
     .job-highlights li{
       position:relative;
-      padding-left:20px;
-      margin-bottom:8px;
-      color:var(--text);
+      padding-left:24px;
+      margin-bottom:10px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
     }
     .job-highlights li::before{
-      content:'•';
-      color:var(--accent);
-      font-weight:bold;
+      content:'';
+      width: 6px;
+      height: 6px;
+      background: linear-gradient(135deg, var(--aurora-blue), var(--lavender));
+      border-radius: 50%;
       position:absolute;
       left:0;
+      top: 8px;
+      box-shadow: 0 0 8px rgba(201,184,232,.4);
     }
 
     /* Skills Grid */
     .skills-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
-      gap:16px;
+      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+      gap:18px;
     }
     .skill-category{
-      background:var(--panel);
-      border:1px solid rgba(255,255,255,.06);
+      background:linear-gradient(180deg, rgba(201,184,232,.04), rgba(168,200,232,.02));
+      border:1px solid rgba(201,184,232,.1);
       border-radius:var(--radius-sm);
-      padding:20px;
+      padding:24px;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+    .skill-category:hover {
+      border-color: rgba(201,184,232,.2);
+      transform: translateY(-2px);
     }
     .skill-category h4{
-      margin:0 0 12px;
-      color:var(--accent);
-      font-size:16px;
-      font-weight:700;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      margin:0 0 16px;
+      color:var(--lavender);
+      font-size:18px;
+      font-weight:500;
+      letter-spacing:0.02em;
     }
     .skill-tags{
       display:flex;
@@ -176,94 +361,171 @@
       gap:8px;
     }
     .skill-tag{
-      background:rgba(59,231,255,.1);
-      border:1px solid rgba(59,231,255,.25);
-      color:var(--accent);
-      padding:4px 8px;
-      border-radius:6px;
-      font-size:12px;
-      font-weight:600;
+      background:rgba(201,184,232,.08);
+      border:1px solid rgba(201,184,232,.2);
+      color:var(--lavender);
+      padding:6px 12px;
+      border-radius:20px;
+      font-size:11px;
+      font-weight:500;
+      letter-spacing:0.03em;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+    .skill-tag:hover {
+      border-color: rgba(201,184,232,.4);
+      background: rgba(201,184,232,.12);
     }
 
     /* Education */
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
     .education-item{
-      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.005));
-      border:1px solid rgba(255,255,255,.06); 
+      background:linear-gradient(180deg, rgba(201,184,232,.03), rgba(168,200,232,.01));
+      border:1px solid rgba(201,184,232,.1); 
       border-radius:var(--radius); 
       box-shadow:var(--shadow); 
       padding:24px;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+    .education-item:hover {
+      border-color: rgba(201,184,232,.2);
+      transform: translateY(-2px);
     }
     .degree{
-      font-size:18px;
-      font-weight:700;
-      margin:0 0 4px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size:20px;
+      font-weight:500;
+      margin:0 0 6px;
+      color: var(--lavender-soft);
     }
     .school{
-      color:var(--accent);
-      font-weight:600;
+      color:var(--lavender);
+      font-weight:500;
+      font-size:14px;
       margin-bottom:8px;
     }
     .education-dates{
       color:var(--muted);
-      font-size:14px;
+      font-size:12px;
+      letter-spacing:0.08em;
+      font-weight:500;
     }
     .degree-skills{
       color:var(--muted);
-      font-size:13px;
+      font-size:12px;
       font-style:italic;
-      margin:8px 0 0;
-      line-height:1.4;
+      margin:12px 0 0;
+      line-height:1.5;
+      font-weight:300;
     }
 
     /* Projects */
     .project-item{
-      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.005));
-      border:1px solid rgba(255,255,255,.06); 
+      background:linear-gradient(180deg, rgba(201,184,232,.03), rgba(168,200,232,.01));
+      border:1px solid rgba(201,184,232,.1); 
       border-radius:var(--radius); 
       box-shadow:var(--shadow); 
-      padding:24px;
+      padding:28px;
       margin-bottom:20px;
+      transition: border-color 0.4s ease, transform 0.3s ease;
+    }
+    .project-item:hover {
+      border-color: rgba(201,184,232,.2);
+      transform: translateY(-2px);
     }
     .project-title{
-      font-size:18px;
-      font-weight:700;
-      margin:0 0 8px;
-      color:var(--accent);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size:22px;
+      font-weight:500;
+      margin:0 0 10px;
+      background: linear-gradient(135deg, var(--aurora-blue), var(--lavender-soft));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
     .project-tech{
       color:var(--muted);
+      font-size:12px;
+      margin-bottom:14px;
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing:0.03em;
+    }
+
+    /* Footer */
+    footer{
+      padding:50px 0;
+      color:var(--muted);
+      border-top:1px solid rgba(201,184,232,.1);
+      text-align:center;
       font-size:14px;
-      margin-bottom:12px;
+      letter-spacing:0.05em;
     }
 
     /* Print Styles */
     @media print {
       body{background:#fff;color:#000}
-      .nav{display:none}
-      .wrap{max-width:none;padding:0}
+      .nav, .aurora-bg, .fireflies{display:none}
+      .wrap{max-width:none;padding:20px}
       .resume-section{padding:20px 0}
       .experience-item, .education-item, .project-item{
         box-shadow:none;
         border:1px solid #ddd;
         page-break-inside:avoid;
+        background: #fff;
       }
+      .resume-title, .section-title, .project-title, .glow, .brand-glow {
+        background: none;
+        -webkit-background-clip: unset;
+        background-clip: unset;
+        color: #333;
+      }
+      a { color: #666; }
     }
 
     /* Responsive */
     @media (max-width:768px){
-      .contact-info{flex-direction:column;gap:12px}
+      .contact-info{flex-direction:column;gap:14px;align-items:center}
       .job-header{flex-direction:column;align-items:flex-start}
       .skills-grid{grid-template-columns:1fr}
+      .education-grid{grid-template-columns:1fr}
+    }
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(201,184,232,.2);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(201,184,232,.3);
     }
   </style>
 </head>
 <body>
+  <!-- Aurora Background -->
+  <div class="aurora-bg">
+    <div class="aurora-wave"></div>
+    <div class="aurora-wave"></div>
+  </div>
+
+  <!-- Fireflies -->
+  <div class="fireflies" id="fireflies"></div>
+
   <header class="nav">
     <div class="wrap nav-inner">
-      <div class="brand"><span class="pulse"></span> Mia Murphy - <span class="glow">Finance × Data</span></div>
+      <div class="brand"><span class="pulse"></span> Mia Murphy · <span class="brand-glow">Finance × Data</span></div>
       <nav>
         <ul>
-          <li><a href="index.html">Portfolio</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -275,22 +537,19 @@
     <section class="resume-header">
       <h1 class="resume-title">Mia Murphy</h1>
       <p class="resume-subtitle">Finance × Data Professional</p>
+      <div class="decorative-line"></div>
       <div class="contact-info">
         <div class="contact-item">
-          <span>📞</span>
-          <span>(802) 310-7443</span>
-        </div>
-        <div class="contact-item">
           <span>📧</span>
-          <span>miamurphyvt@gmail.com</span>
+          <a href="mailto:miamurphyvt@gmail.com">miamurphyvt@gmail.com</a>
         </div>
         <div class="contact-item">
           <span>🔗</span>
-          <span>linkedin.com/in/miamurphyvt</span>
+          <a href="https://linkedin.com/in/miamurphyvt" target="_blank">linkedin.com/in/miamurphyvt</a>
         </div>
         <div class="contact-item">
           <span>🌐</span>
-          <span>Portfolio → GitHub</span>
+          <a href="https://github.com/nightskyfirefly" target="_blank">GitHub Portfolio</a>
         </div>
       </div>
     </section>
@@ -299,7 +558,7 @@
     <section class="resume-section">
       <h2 class="section-title">Professional Summary</h2>
       <div class="experience-item">
-        <p class="job-description">
+        <p class="job-description" style="margin:0;font-size:15px;line-height:1.8;">
           Finance-to-Data bridge professional with expertise in FP&A, P&L management, and data analytics. 
           Specializes in translating real financial challenges into scalable data solutions, building 
           database-driven pipelines to replace manual Excel processes, and implementing agentic AI 
@@ -312,7 +571,7 @@
     <section class="resume-section">
       <h2 class="section-title">Key Achievements</h2>
       <div class="experience-item">
-        <ul class="job-highlights">
+        <ul class="job-highlights" style="margin:0;">
           <li>Consolidated and automated financial close processes, cutting manual effort by 50%</li>
           <li>Built real-time Power BI dashboards for daily, weekly, and monthly KPI tracking</li>
           <li>Led P&L management and forecasting for $20M+ monthly revenue streams</li>
@@ -329,7 +588,7 @@
       <div class="experience-item">
         <div class="job-header">
           <div>
-            <h3 class="job-title">Strategic & Business Advisor</h3>
+            <h3 class="job-title">Strategic & Business Advisor - FinOps</h3>
             <div class="company">Politheon (Georgia Tech CreateX Startup)</div>
           </div>
           <div class="job-dates">2025 - Present</div>
@@ -338,9 +597,10 @@
           Atlanta, GA
         </div>
         <ul class="job-highlights">
-          <li>Serve as a liaison between business, policy stakeholders, and engineering teams, aligning technical development with strategic goals</li>
-          <li>Advise on agentic AI applications for policy insights, translating complex technical capabilities into business use cases</li>
-          <li>Contributed to product and growth strategy that led to Politheon being recognized as the #2 featured startup at Georgia Tech's CreateX showcase</li>
+          <li>Partner with founders, engineering, and finance to shape Politheon's cloud FinOps strategy, aligning AI infrastructure decisions with budget, margin, and growth targets</li>
+          <li>Design cost-visibility dashboards and unit-economics models (by workload, feature, and customer segment) to translate Azure and GPU spend into pricing, ROI, and roadmap decisions</li>
+          <li>Establish tagging standards, budget guardrails, and right-sizing recommendations that improve cloud spend accountability while preserving model performance and scalability</li>
+          <li>Contributed to the product and growth strategy that led to Politheon being recognized as the #2 featured startup at Georgia Tech's CreateX showcase</li>
         </ul>
       </div>
 
@@ -356,11 +616,13 @@
           Londonderry, NH
         </div>
         <ul class="job-highlights">
-          <li>Selected into controller development track, blending FP&A and accounting</li>
-          <li>Manage $20M+ P&L, CAPEX allocation, and month-end close in SAP/IBM TM1</li>
-          <li>Shortened close cycle to 5 days; improved reporting accuracy and controls</li>
-          <li>Partner with operations & engineering to align budgets with strategy</li>
-          <li>Built Power BI dashboards & automation reducing manual effort 40%+</li>
+          <li>Lead the design, development, and deployment of analytics solutions supporting P&L, CAPEX, operations, and supply chain</li>
+          <li>Partner with business leaders to identify high-value analytics use cases, prioritize initiatives, and tie insights directly to margin, cost, and growth decisions</li>
+          <li>Own the dashboard and reporting ecosystem (SAP, IBM TM1, Power BI, Azure), ensuring data integrity, performance, and consistent reporting standards</li>
+          <li>Drive adoption of self-service analytics by converting manual Excel workflows into automated, governed solutions and training stakeholders across finance and operations</li>
+          <li>Champion a culture of continuous improvement and innovation in analytics, feeding process and data enhancements into forecasting, pricing, and investment decisions</li>
+          <li>Supported M&A integration by mapping acquired entity financials into the corporate data warehouse and aligning reporting hierarchies with parent company standards</li>
+          <li>Led database transformation initiatives to consolidate legacy systems from acquired businesses into unified SAP and TM1 environments, enabling seamless cross-entity reporting</li>
         </ul>
       </div>
 
@@ -386,26 +648,27 @@
     <!-- EDUCATION -->
     <section class="resume-section">
       <h2 class="section-title">Education</h2>
-      
-      <div class="education-item">
-        <h3 class="degree">M.S. in Analytics</h3>
-        <div class="school">Georgia Institute of Technology</div>
-        <div class="education-dates">2029</div>
-        <p class="degree-skills">Advanced machine learning, statistical modeling, data engineering, and AI applications</p>
-      </div>
+      <div class="education-grid">
+        <div class="education-item">
+          <h3 class="degree">M.S. in Analytics</h3>
+          <div class="school">Georgia Institute of Technology</div>
+          <div class="education-dates">2029</div>
+          <p class="degree-skills">Advanced machine learning, statistical modeling, data engineering, and AI applications</p>
+        </div>
 
-      <div class="education-item">
-        <h3 class="degree">M.S. in Business Analytics</h3>
-        <div class="school">Cornell SC Johnson College of Business</div>
-        <div class="education-dates">2026</div>
-        <p class="degree-skills">Agentic AI, Azure-based finance automations, business intelligence, and data-driven decision making</p>
-      </div>
+        <div class="education-item">
+          <h3 class="degree">M.S. in Business Analytics</h3>
+          <div class="school">Cornell SC Johnson College of Business</div>
+          <div class="education-dates">2026</div>
+          <p class="degree-skills">Agentic AI, Azure-based finance automations, business intelligence, and data-driven decision making</p>
+        </div>
 
-      <div class="education-item">
-        <h3 class="degree">B.A. Economics & Statistics</h3>
-        <div class="school">University of Vermont</div>
-        <div class="education-dates">2021</div>
-        <p class="degree-skills">Economic analysis, statistical methods, quantitative reasoning, and market research</p>
+        <div class="education-item">
+          <h3 class="degree">B.A. Economics & Statistics</h3>
+          <div class="school">University of Vermont</div>
+          <div class="education-dates">2021</div>
+          <p class="degree-skills">Economic analysis, statistical methods, quantitative reasoning, and market research</p>
+        </div>
       </div>
     </section>
 
@@ -431,6 +694,23 @@
             <span class="skill-tag">Tableau</span>
           </div>
         </div>
+        <div class="skill-category">
+          <h4>Finance & ERP</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">FP&A</span>
+            <span class="skill-tag">P&L Management</span>
+            <span class="skill-tag">SAP</span>
+            <span class="skill-tag">IBM TM1</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h4>Cloud & Automation</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Azure</span>
+            <span class="skill-tag">Databricks</span>
+            <span class="skill-tag">Agentic AI</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -441,7 +721,7 @@
       <div class="project-item">
         <h3 class="project-title">Commute Cost Analyzer</h3>
         <div class="project-tech">Next.js 14 • TypeScript • Tailwind CSS • Chart.js</div>
-        <p class="job-description">
+        <p class="job-description" style="margin:0;">
           Elevation-aware fuel optimization system that calculates energy consumption for hills and valleys, 
           compares traditional vehicles with hybrids, and provides ROI analysis for vehicle upgrades.
         </p>
@@ -450,7 +730,7 @@
       <div class="project-item">
         <h3 class="project-title">Fragrance Trends Analysis</h3>
         <div class="project-tech">Python • Pandas • Plotly • Seaborn</div>
-        <p class="job-description">
+        <p class="job-description" style="margin:0;">
           Comprehensive exploratory data analysis of top 1,000 perfumes using custom web scraping tools 
           to analyze brand performance, gender preferences, and market trends.
         </p>
@@ -472,7 +752,7 @@
           </div>
           <div class="contact-item">
             <span>🌐</span>
-            <a href="index.html">Portfolio Website</a>
+            <a href="portfolio.html">Portfolio Website</a>
           </div>
         </div>
       </div>
@@ -485,6 +765,36 @@
 
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Create fireflies
+    function createFireflies() {
+      const firefliesContainer = document.getElementById('fireflies');
+      const fireflyCount = 18;
+
+      for (let i = 0; i < fireflyCount; i++) {
+        const firefly = document.createElement('div');
+        firefly.className = 'firefly';
+        
+        firefly.style.left = Math.random() * 100 + '%';
+        firefly.style.top = (Math.random() * 70 + 30) + '%';
+        
+        const floatDuration = Math.random() * 10 + 12;
+        const glowDuration = Math.random() * 3 + 3;
+        const floatDelay = Math.random() * 15;
+        const glowDelay = Math.random() * 4;
+        
+        firefly.style.animationDuration = floatDuration + 's, ' + glowDuration + 's';
+        firefly.style.animationDelay = floatDelay + 's, ' + glowDelay + 's';
+        
+        const size = Math.random() * 2 + 2;
+        firefly.style.width = size + 'px';
+        firefly.style.height = size + 'px';
+        
+        firefliesContainer.appendChild(firefly);
+      }
+    }
+
+    createFireflies();
   </script>
 </body>
 </html>
