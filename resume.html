@@ -330,50 +330,38 @@
       box-shadow: 0 0 8px rgba(201,184,232,.4);
     }
 
-    /* Skills Grid */
-    .skills-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
-      gap:18px;
+    /* Tech Constellation */
+    .tech-constellation {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
     }
-    .skill-category{
-      background:linear-gradient(180deg, rgba(201,184,232,.04), rgba(168,200,232,.02));
-      border:1px solid rgba(201,184,232,.1);
-      border-radius:var(--radius-sm);
-      padding:24px;
-      transition: border-color 0.3s ease, transform 0.3s ease;
+    .tech-category {
+      text-align: center;
     }
-    .skill-category:hover {
-      border-color: rgba(201,184,232,.2);
-      transform: translateY(-2px);
-    }
-    .skill-category h4{
+    .tech-category h4 {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      margin:0 0 16px;
-      color:var(--lavender);
-      font-size:18px;
-      font-weight:500;
-      letter-spacing:0.02em;
+      margin: 0 0 16px;
+      color: var(--lavender);
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
-    .skill-tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
     }
-    .skill-tag{
-      background:rgba(201,184,232,.08);
-      border:1px solid rgba(201,184,232,.2);
-      color:var(--lavender);
-      padding:6px 12px;
-      border-radius:20px;
-      font-size:11px;
-      font-weight:500;
-      letter-spacing:0.03em;
-      transition: border-color 0.3s ease, background 0.3s ease;
+    .badge-row img {
+      height: 28px;
+      border-radius: 6px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .skill-tag:hover {
-      border-color: rgba(201,184,232,.4);
-      background: rgba(201,184,232,.12);
+    .badge-row img:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(201,184,232,.3);
     }
 
     /* Education */
@@ -672,43 +660,44 @@
       </div>
     </section>
 
-    <!-- CERTIFICATIONS & SKILLS -->
+    <!-- TECH CONSTELLATION -->
     <section class="resume-section">
-      <h2 class="section-title">Certifications & Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h4>Certifications</h4>
-          <div class="skill-tags">
-            <span class="skill-tag">Google Data Analytics</span>
-            <span class="skill-tag">SAP FICO</span>
-            <span class="skill-tag">IBM TM1</span>
+      <h2 class="section-title">Tech Constellation</h2>
+      <div class="tech-constellation">
+        <div class="tech-category">
+          <h4>Languages & Query</h4>
+          <div class="badge-row">
+            <img src="https://img.shields.io/badge/Python-c9b8e8?style=for-the-badge&logo=python&logoColor=0a0a12" alt="Python">
+            <img src="https://img.shields.io/badge/SQL-a8c8e8?style=for-the-badge&logo=mysql&logoColor=0a0a12" alt="SQL">
+            <img src="https://img.shields.io/badge/R-f4b8c5?style=for-the-badge&logo=r&logoColor=0a0a12" alt="R">
+            <img src="https://img.shields.io/badge/JavaScript-d4a8e8?style=for-the-badge&logo=javascript&logoColor=0a0a12" alt="JavaScript">
           </div>
         </div>
-        <div class="skill-category">
+        <div class="tech-category">
           <h4>Data & Analytics</h4>
-          <div class="skill-tags">
-            <span class="skill-tag">Power BI</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">R</span>
-            <span class="skill-tag">Tableau</span>
+          <div class="badge-row">
+            <img src="https://img.shields.io/badge/Power_BI-c9b8e8?style=for-the-badge&logo=powerbi&logoColor=0a0a12" alt="Power BI">
+            <img src="https://img.shields.io/badge/Pandas-a8c8e8?style=for-the-badge&logo=pandas&logoColor=0a0a12" alt="Pandas">
+            <img src="https://img.shields.io/badge/NumPy-f4b8c5?style=for-the-badge&logo=numpy&logoColor=0a0a12" alt="NumPy">
+            <img src="https://img.shields.io/badge/Scikit_Learn-d4a8e8?style=for-the-badge&logo=scikitlearn&logoColor=0a0a12" alt="Scikit Learn">
+            <img src="https://img.shields.io/badge/Tableau-c9b8e8?style=for-the-badge&logo=tableau&logoColor=0a0a12" alt="Tableau">
           </div>
         </div>
-        <div class="skill-category">
-          <h4>Finance & ERP</h4>
-          <div class="skill-tags">
-            <span class="skill-tag">FP&A</span>
-            <span class="skill-tag">P&L Management</span>
-            <span class="skill-tag">SAP</span>
-            <span class="skill-tag">IBM TM1</span>
+        <div class="tech-category">
+          <h4>Enterprise & Cloud</h4>
+          <div class="badge-row">
+            <img src="https://img.shields.io/badge/SAP_FICO-a8c8e8?style=for-the-badge&logo=sap&logoColor=0a0a12" alt="SAP FICO">
+            <img src="https://img.shields.io/badge/IBM_TM1-f4b8c5?style=for-the-badge&logo=ibm&logoColor=0a0a12" alt="IBM TM1">
+            <img src="https://img.shields.io/badge/Azure-d4a8e8?style=for-the-badge&logo=microsoftazure&logoColor=0a0a12" alt="Azure">
+            <img src="https://img.shields.io/badge/Databricks-c9b8e8?style=for-the-badge&logo=databricks&logoColor=0a0a12" alt="Databricks">
           </div>
         </div>
-        <div class="skill-category">
-          <h4>Cloud & Automation</h4>
-          <div class="skill-tags">
-            <span class="skill-tag">Azure</span>
-            <span class="skill-tag">Databricks</span>
-            <span class="skill-tag">Agentic AI</span>
+        <div class="tech-category">
+          <h4>Web & Design</h4>
+          <div class="badge-row">
+            <img src="https://img.shields.io/badge/React-a8c8e8?style=for-the-badge&logo=react&logoColor=0a0a12" alt="React">
+            <img src="https://img.shields.io/badge/Tailwind-f4b8c5?style=for-the-badge&logo=tailwindcss&logoColor=0a0a12" alt="Tailwind">
+            <img src="https://img.shields.io/badge/Figma-d4a8e8?style=for-the-badge&logo=figma&logoColor=0a0a12" alt="Figma">
           </div>
         </div>
       </div>
