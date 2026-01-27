@@ -15,7 +15,7 @@ import {
   Legend,
   RadialLinearScale,
 } from 'chart.js'
-import { Line, Radar } from 'react-chartjs-2'
+import { Line, Radar, Chart } from 'react-chartjs-2'
 
 ChartJS.register(
   CategoryScale,
@@ -204,7 +204,7 @@ export default function DashboardsSection() {
             <span className="pill mono">Monthly</span>
           </div>
           <div className="dash-body" style={{ height: '200px' }}>
-            <Line data={plChartData} options={chartOptions} />
+            <Chart type="line" data={plChartData as any} options={chartOptions} />
           </div>
         </motion.article>
 
@@ -229,8 +229,9 @@ export default function DashboardsSection() {
             <span className="pill mono">Weekly</span>
           </div>
           <div className="dash-body" style={{ height: '200px' }}>
-            <Line
-              data={oeeChartData}
+            <Chart
+              type="line"
+              data={oeeChartData as any}
               options={{
                 ...chartOptions,
                 scales: {
