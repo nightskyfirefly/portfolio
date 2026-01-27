@@ -661,7 +661,7 @@
       Welcome to my portfolio
     </div>
 
-    <a href="https://nightskyfirefly.github.io/portfolio/portfolio.html" class="enter-btn">
+    <a href="https://nightskyfirefly.vercel.app/" class="enter-btn">
       <span>Enter</span>
       <span class="arrow">→</span>
     </a>
@@ -758,7 +758,10 @@
         clearInterval(phaseInterval);
         loadingText.classList.add('hidden');
         progressContainer.classList.add('hidden');
-        moonPhases.classList.add('hidden');
+        
+        // Instead of hiding, trigger unique completion effect
+        // moonPhases.classList.add('hidden'); 
+        moonPhases.classList.add('loading-complete');
         
         // Show welcome message
         setTimeout(() => {
