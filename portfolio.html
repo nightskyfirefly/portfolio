@@ -119,6 +119,55 @@
       50% { opacity: 0.3; }
     }
 
+    /* Moondust Particles */
+    .moondust-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .moondust-particle {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      will-change: transform;
+      transition: opacity 0.3s ease;
+    }
+    .moondust-particle::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: radial-gradient(circle, currentColor 0%, transparent 70%);
+      filter: blur(2px);
+    }
+
+    /* Parallax Classes */
+    .moondust-parallax {
+      will-change: transform;
+      transition: transform 0.1s ease-out;
+    }
+    .moondust-bg {
+      will-change: transform;
+      transition: transform 0.15s ease-out;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .moondust-parallax,
+      .moondust-bg,
+      .moondust-particle {
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
     a{color:var(--lavender);text-decoration:none;transition:color 0.3s ease}
     a:hover{color:var(--lavender-soft)}
 
@@ -648,6 +697,9 @@
 
   <!-- Fireflies -->
   <div class="fireflies" id="fireflies"></div>
+
+  <!-- Moondust Particles -->
+  <div class="moondust-container" id="moondust"></div>
 
   <header class="nav">
     <div class="wrap nav-inner">
@@ -1192,6 +1244,194 @@
 
     // Kick everything off once Chart is present or stubbed
     ensureChart(function(_mode){ runApp(); });
+
+    // Moondust Cursor-Reactive Effects
+    (function() {
+      // Check for reduced motion preference
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return; // Skip moondust effects if user prefers reduced motion
+      }
+
+      // Cursor position tracking
+      var mouseX = 0;
+      var mouseY = 0;
+      var targetX = 0;
+      var targetY = 0;
+      var smoothX = 0;
+      var smoothY = 0;
+      var isMouseActive = false;
+
+      // Parallax elements
+      var parallaxElements = [];
+      var backgroundElement = null;
+      var particles = [];
+
+      // Initialize parallax elements
+      function initParallax() {
+        // Find all cards and add parallax class
+        var cards = document.querySelectorAll('.card, .aurora-card, .dash, .job');
+        cards.forEach(function(el) {
+          el.classList.add('moondust-parallax');
+          parallaxElements.push({
+            element: el,
+            multiplier: 0.04 + Math.random() * 0.02 // 0.04-0.06 for subtle variation
+          });
+        });
+
+        // Background element
+        backgroundElement = document.querySelector('.aurora-bg');
+        if (backgroundElement) {
+          backgroundElement.classList.add('moondust-bg');
+        }
+      }
+
+      // Create moondust particles
+      function createMoondustParticles() {
+        var container = document.getElementById('moondust');
+        if (!container) return;
+
+        var particleCount = 20;
+        var colors = ['#c9b8e8', '#a8c8e8', '#f5e6a3', '#d4a8e8']; // lavender, aurora-blue, firefly, aurora-violet
+
+        for (var i = 0; i < particleCount; i++) {
+          var particle = document.createElement('div');
+          particle.className = 'moondust-particle';
+
+          // Random properties
+          var size = 1 + Math.random() * 2; // 1-3px
+          var color = colors[Math.floor(Math.random() * colors.length)];
+          var opacity = 0.15 + Math.random() * 0.15; // 0.15-0.3
+          var x = Math.random() * window.innerWidth;
+          var y = Math.random() * window.innerHeight;
+          var speed = 0.3 + Math.random() * 0.4; // 0.3-0.7 for lag effect
+
+          particle.style.width = size + 'px';
+          particle.style.height = size + 'px';
+          particle.style.color = color;
+          particle.style.opacity = opacity;
+          particle.style.left = '0';
+          particle.style.top = '0';
+          particle.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+
+          particles.push({
+            element: particle,
+            x: x,
+            y: y,
+            targetX: x,
+            targetY: y,
+            speed: speed,
+            baseX: x,
+            baseY: y
+          });
+
+          container.appendChild(particle);
+        }
+      }
+
+      // Mouse move handler
+      function handleMouseMove(e) {
+        targetX = e.clientX;
+        targetY = e.clientY;
+        isMouseActive = true;
+      }
+
+      // Mouse leave handler - smooth reset
+      function handleMouseLeave() {
+        isMouseActive = false;
+        targetX = window.innerWidth / 2;
+        targetY = window.innerHeight / 2;
+      }
+
+      // Animation loop
+      function animate() {
+        // Smooth interpolation for cursor position
+        var easing = 0.06;
+        smoothX += (targetX - smoothX) * easing;
+        smoothY += (targetY - smoothY) * easing;
+
+        // Normalize to -1 to 1 range (centered)
+        var normalizedX = (smoothX / window.innerWidth) * 2 - 1;
+        var normalizedY = (smoothY / window.innerHeight) * 2 - 1;
+
+        // Apply parallax to cards
+        parallaxElements.forEach(function(item) {
+          var offsetX = normalizedX * 6 * item.multiplier * 100; // Max ~5-8px
+          var offsetY = normalizedY * 6 * item.multiplier * 100;
+          var rotateX = normalizedY * 0.5; // Max 0.5deg
+          var rotateY = normalizedX * 0.5;
+
+          item.element.style.transform = 
+            'translate(' + offsetX + 'px, ' + offsetY + 'px) ' +
+            'perspective(1000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
+        });
+
+        // Apply parallax to background (very subtle)
+        if (backgroundElement) {
+          var bgOffsetX = normalizedX * 2; // Max ~2px
+          var bgOffsetY = normalizedY * 2;
+          backgroundElement.style.transform = 'translate(' + bgOffsetX + 'px, ' + bgOffsetY + 'px)';
+        }
+
+        // Update moondust particles
+        particles.forEach(function(particle) {
+          if (isMouseActive) {
+            // Particles drift toward cursor with lag
+            var dx = targetX - particle.x;
+            var dy = targetY - particle.y;
+            var distance = Math.sqrt(dx * dx + dy * dy);
+            
+            // Only move if cursor is somewhat close (within 400px)
+            if (distance < 400) {
+              var influence = (400 - distance) / 400; // 0 to 1
+              particle.targetX = particle.x + dx * influence * 0.1;
+              particle.targetY = particle.y + dy * influence * 0.1;
+            } else {
+              // Return to base position
+              particle.targetX = particle.baseX;
+              particle.targetY = particle.baseY;
+            }
+          } else {
+            // Return to base position when mouse leaves
+            particle.targetX = particle.baseX;
+            particle.targetY = particle.baseY;
+          }
+
+          // Smooth particle movement
+          particle.x += (particle.targetX - particle.x) * particle.speed;
+          particle.y += (particle.targetY - particle.y) * particle.speed;
+
+          particle.element.style.transform = 'translate(' + particle.x + 'px, ' + particle.y + 'px)';
+        });
+
+        requestAnimationFrame(animate);
+      }
+
+      // Initialize on page load
+      function init() {
+        initParallax();
+        createMoondustParticles();
+        
+        // Set initial cursor position to center
+        targetX = window.innerWidth / 2;
+        targetY = window.innerHeight / 2;
+        smoothX = targetX;
+        smoothY = targetY;
+
+        // Event listeners
+        document.addEventListener('mousemove', handleMouseMove);
+        document.addEventListener('mouseleave', handleMouseLeave);
+
+        // Start animation loop
+        animate();
+      }
+
+      // Wait for DOM to be ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
   </script>
 </body>
 </html>
