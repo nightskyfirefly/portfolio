@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <noscript><meta http-equiv="refresh" content="4;url=https://nightskyfirefly.vercel.app/"></noscript>
   <style>
     :root{
       --bg: #0a0a12;               /* Deep night sky */
@@ -763,10 +764,13 @@
         // moonPhases.classList.add('hidden'); 
         moonPhases.classList.add('loading-complete');
         
-        // Show welcome message
+        // Show welcome message, then forward to the live portfolio
         setTimeout(() => {
           welcomeText.classList.add('visible');
         }, 400);
+        setTimeout(() => {
+          window.location.replace('https://nightskyfirefly.vercel.app/');
+        }, 1800);
       }, 3200);
     }
 
